@@ -63,6 +63,11 @@ header nav a {
     color: var(--text-primary);
 }
 
+header nav a:hover {
+    /* Visual Effects */
+    text-decoration: underline;
+}
+
 main {
     /* Physical Placement */
     flex: 1;
@@ -100,6 +105,18 @@ main ul {
 
     /* Visual Effects */
     font-size: 115%;
+}
+
+.track {
+    /* Physical Placement */
+    display: flex;
+    gap: 2rem;
+    justify-content: left;
+    align-items: center;
+}
+
+.track img {
+    border: 1px solid var(--text-primary);
 }
 
 footer {
