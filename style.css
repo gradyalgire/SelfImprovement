@@ -1,0 +1,140 @@
+:root {
+  /* Colors */
+  --background: #f4f6f3;
+  --header-footer: #7a9486;
+  --text-primary: #28312b;
+  --text-secondary: #5f6f65;
+  --accent-primary: #9caf88;
+  --accent-secondary: #c9d6c1;
+  --accent-bright: #ddc69a;
+  --accent-warm: #c2a878;
+  --accent-stone: #8a7f6a;
+
+  /* Fonts */
+  --font-heading: "Merriweather", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+    /* Physical Placement */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    /* Visual Effects */
+    background-color: var(--background);
+    font-family: var(--font-body);
+}
+
+header {
+    /* Physical Placement */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+
+    /* Visual Effects */
+    background-color: var(--header-footer);
+    color: var(--text-primary);
+}
+
+header h1 {
+    /* Visual Effects */
+    font-size: 200%;
+}
+
+header nav {
+    /* Physical Placement */
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    /* Visual Effects */
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+main {
+    /* Physical Placement */
+    flex: 1;
+    padding: 3rem 2rem;
+    line-height: 1.5rem;
+
+    /* Visual Effects */
+    color: var(--text-primary);
+}
+
+main h1 {
+    /* Visual Effects */
+    font-size: 250%;
+}
+
+main h2 {
+    /* Visual Effects */
+    font-size: 175%;
+}
+
+main h3 {
+    font-size: 130%;
+}
+
+main p {
+    /* Visual Effects */
+    font-size: 125%;
+}
+
+main ul {
+    /* Physical Placement */
+    list-style-position: inside;
+    padding-left: 1rem;
+    margin-left: 1rem;
+
+    /* Visual Effects */
+    font-size: 115%;
+}
+
+footer {
+    /* Physical Placement */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem;
+
+    /* Visual Effects */
+    background-color: var(--header-footer);
+}
+
+footer h3 {
+    font-size: 130%;
+}
+
+footer ul {
+    /* Physical Placement */
+    display: flex;
+    gap: 2rem;
+
+    /* Visual Effects */
+    list-style: none;
+}
+
+footer ul a {
+    /* Visual Effects */
+    text-decoration: none;
+    color: var(--text-primary);
+    opacity: 0.85;
+}
+
+footer ul a:hover {
+    /* Visual Effects */
+    opacity: 1;
+    text-decoration: underline;
+}
