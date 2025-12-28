@@ -119,6 +119,30 @@ main ul {
     border: 1px solid var(--text-primary);
 }
 
+.podcasts .podcast {
+    /* Physical Placement */
+    display: flex;
+    gap: 2rem;
+    justify-content: left;
+    align-items: center;
+}
+
+.podcasts .podcast img {
+    border: 1px solid var(--text-primary);
+}
+
+.books .book {
+    /* Physical Placement */
+    display: flex;
+    gap: 2rem;
+    justify-content: left;
+    align-items: center;
+}
+
+.books .book img {
+    border: 1px solid var(--text-primary);
+}
+
 footer {
     /* Physical Placement */
     display: flex;
