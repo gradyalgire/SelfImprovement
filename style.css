@@ -1,23 +1,23 @@
 :root {
-  /* Colors */
-  --background: #f4f6f3;
-  --header-footer: #7a9486;
-  --text-primary: #28312b;
-  --text-secondary: #5f6f65;
-  --accent-primary: #9caf88;
-  --accent-secondary: #c9d6c1;
-  --accent-bright: #ddc69a;
-  --accent-warm: #c2a878;
-  --accent-stone: #8a7f6a;
+    /* Colors */
+    --background: #f4f6f3;
+    --header-footer: #7a9486;
+    --text-primary: #28312b;
+    --text-secondary: #5f6f65;
+    --accent-primary: #9caf88;
+    --accent-secondary: #c9d6c1;
+    --accent-bright: #ddc69a;
+    --accent-warm: #c2a878;
+    --accent-stone: #8a7f6a;
 
-  /* Fonts */
-  --font-heading: "Merriweather", serif;
-  --font-body: "Inter", system-ui, sans-serif;
+    /* Fonts */
+    --font-heading: "Merriweather", serif;
+    --font-body: "Inter", system-ui, sans-serif;
 }
 
 html,
 body {
-  margin: 0;
+    margin: 0;
 }
 
 body {
@@ -178,4 +178,70 @@ footer ul a:hover {
     /* Visual Effects */
     opacity: 1;
     text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media (max-width: 1000px) {
+
+    header {
+        /* Physical Placement */
+        display: inline;
+        padding: 2rem 2rem 0rem;
+
+        /* Visual Effects */
+        font-size: 60%;
+    }
+
+    header h1 {
+        /* Physical Placement */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header nav {
+        /* Physical Placement */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    header nav a {
+        /* Physical Placement */
+        padding: .5rem;
+
+        /* Visual Effects */
+        background-color: var(--accent-secondary);
+        border-radius: 5rem;
+    }
+
+    main h1 {
+        /* Physical Placement */
+        line-height: 1;
+    }
+
+    .track,
+    .podcasts .podcast,
+    .books .book {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer {
+        /* Visual Effects */
+        font-size: 70%;
+    }
+
+    footer ul {
+        /* Physical Placement */
+        display: inline;
+        line-height: 2;
+
+        /* Visual Effects */
+        list-style: none;
+    }
 }
