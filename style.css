@@ -205,7 +205,7 @@ footer ul a:hover {
         justify-content: center;
         align-items: center;
         padding: 1.5rem;
-        gap: 1rem;
+        gap: .5rem;
     }
 
     header nav a {
