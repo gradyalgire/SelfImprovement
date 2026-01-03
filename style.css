@@ -231,6 +231,11 @@ footer ul a:hover {
         border-radius: 5rem;
     }
 
+    header nav a:hover {
+        /* Visual Effects */
+        text-decoration: none;
+    }
+
     main h1 {
         /* Physical Placement */
         line-height: 1;
@@ -249,6 +254,7 @@ footer ul a:hover {
     footer {
         /* Visual Effects */
         font-size: 70%;
+        padding: 1rem 2rem;
     }
 
     footer ul {
