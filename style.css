@@ -46,9 +46,11 @@ header {
     color: var(--text-primary);
 }
 
-header h1 {
+header h1 a {
     /* Visual Effects */
     font-size: 200%;
+    text-decoration: none;
+    color: var(--text-primary);
 }
 
 header nav {
