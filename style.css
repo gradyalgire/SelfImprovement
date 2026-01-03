@@ -109,7 +109,11 @@ main ul {
     font-size: 115%;
 }
 
-.track {
+.track,
+.podcasts .podcast,
+.books .book,
+.videos .video,
+.movies .movie {
     /* Physical Placement */
     display: flex;
     gap: 2rem;
@@ -117,43 +121,12 @@ main ul {
     align-items: center;
 }
 
-.track img {
-    border: 1px solid var(--text-primary);
-}
-
-.podcasts .podcast {
-    /* Physical Placement */
-    display: flex;
-    gap: 2rem;
-    justify-content: left;
-    align-items: center;
-}
-
-.podcasts .podcast img {
-    border: 1px solid var(--text-primary);
-}
-
-.books .book {
-    /* Physical Placement */
-    display: flex;
-    gap: 2rem;
-    justify-content: left;
-    align-items: center;
-}
-
-.books .book img {
-    border: 1px solid var(--text-primary);
-}
-
-.videos .video {
-    /* Physical Placement */
-    display: flex;
-    gap: 2rem;
-    justify-content: left;
-    align-items: center;
-}
-
-.videos .video img {
+.track img,
+.podcasts .podcast img,
+.books .book img,
+.videos .video img,
+.movies .movie img {
+    /* Visual Effects */
     border: 1px solid var(--text-primary);
 }
 
@@ -244,7 +217,8 @@ footer ul a:hover {
     .track,
     .podcasts .podcast,
     .books .book,
-    .videos .video {
+    .videos .video,
+    .movies .movie{
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
