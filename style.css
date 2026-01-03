@@ -238,7 +238,8 @@ footer ul a:hover {
 
     .track,
     .podcasts .podcast,
-    .books .book {
+    .books .book,
+    .videos .video {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
