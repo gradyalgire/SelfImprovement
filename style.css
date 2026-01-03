@@ -145,6 +145,18 @@ main ul {
     border: 1px solid var(--text-primary);
 }
 
+.videos .video {
+    /* Physical Placement */
+    display: flex;
+    gap: 2rem;
+    justify-content: left;
+    align-items: center;
+}
+
+.videos .video img {
+    border: 1px solid var(--text-primary);
+}
+
 footer {
     /* Physical Placement */
     display: flex;
