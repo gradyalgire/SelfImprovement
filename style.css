@@ -17,6 +17,7 @@
 
 html,
 body {
+    /* Physical Placement */
     margin: 0;
 }
 
@@ -91,6 +92,7 @@ main h2 {
 }
 
 main h3 {
+    /* Visual Effects */
     font-size: 130%;
 }
 
@@ -130,6 +132,40 @@ main ul {
     border: 1px solid var(--text-primary);
 }
 
+.recommendation-form fieldset {
+    /* Visual Effects */
+    background-color: var(--accent-secondary);
+}
+
+.recommendation-form select {
+    /* Physical Placement */
+    width: 310px;
+}
+
+.recommendation-form input {
+    /* Physical Placement */
+    width: 300px;
+}
+
+.recommendation-form textarea {
+    /* Physical Placement */
+    width: 800px;
+}
+
+.recommendation-form button {
+    /* Visual Effects */
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: var(--accent-warm);
+}
+
+.recommendation-form button:hover {
+    /* Visual Effects */
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: var(--accent-bright);
+}
+
 footer {
     /* Physical Placement */
     display: flex;
@@ -142,6 +178,7 @@ footer {
 }
 
 footer h3 {
+    /* Visual Effects */
     font-size: 130%;
 }
 
@@ -219,16 +256,30 @@ footer ul a:hover {
     .books .book,
     .videos .video,
     .movies .movie{
+        /* Physical Placement */
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         align-items: center;
     }
 
+    .recommendation-form select {
+        /* Physical Placement */
+        width: 260px;
+    }
+
+    .recommendation-form input,
+    .recommendation-form textarea {
+        /* Physical Placement */
+        width: 250px;
+    }
+
     footer {
+        /* Physical Placement */
+        padding: 1rem 2rem;
+
         /* Visual Effects */
         font-size: 70%;
-        padding: 1rem 2rem;
     }
 
     footer ul {
