@@ -221,7 +221,7 @@ footer ul a:hover {
         padding: 2rem 2rem 0rem;
 
         /* Visual Effects */
-        font-size: 80%;
+        font-size: 70%;
     }
 
     header h1 {
@@ -237,7 +237,7 @@ footer ul a:hover {
         justify-content: center;
         align-items: center;
         padding: 1.5rem;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     header nav a {
