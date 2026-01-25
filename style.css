@@ -132,6 +132,13 @@ main ul {
     border: 1px solid var(--text-primary);
 }
 
+.podcasts .podcast .notable-episodes a {
+    /* Visual Effects */
+    font-size: 70%;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
 .recommendation-form fieldset {
     /* Visual Effects */
     background-color: var(--accent-secondary);
