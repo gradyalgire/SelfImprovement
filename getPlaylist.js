@@ -17,7 +17,7 @@ if (error) {
 const container = document.getElementById('playlist')
 
 container.innerHTML = songs.map(s => `
-    <div class="track">
+    <div class="track" style="background-color: ${s.background_color};">
         <a href="${s.spotify_link}" target="_blank">
             <img src="${s.image_path}" alt="${s.title} - ${s.artist}">
         </a>

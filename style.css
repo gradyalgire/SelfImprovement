@@ -111,6 +111,16 @@ main ul {
     font-size: 115%;
 }
 
+.track {
+    /* Physical Placement */
+    padding: 1rem;
+    margin: 1rem 0rem;
+
+    /* Visual Effects */
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
 .track,
 .podcasts .podcast,
 .books .book,
@@ -121,6 +131,11 @@ main ul {
     gap: 2rem;
     justify-content: left;
     align-items: center;
+}
+
+.track img {
+    /* Visual Effects */
+    border-radius: 12px;
 }
 
 .track img,
