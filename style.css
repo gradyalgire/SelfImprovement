@@ -281,7 +281,6 @@ footer ul a:hover {
         line-height: 1;
     }
 
-    .track,
     .podcasts .podcast,
     .books .book,
     .videos .video,
@@ -291,6 +290,25 @@ footer ul a:hover {
         align-items: flex-start;
         justify-content: center;
         align-items: center;
+    }
+
+    .track {
+        /* Physical Placement */
+        line-height: normal;
+
+        /* Visual Effects */
+        font-size: 50%;
+    }
+
+    .track .track-content p {
+        /* Physical Placement */
+        max-height: 50px;
+        overflow-y: auto;
+    }
+
+    .track img {
+        /* Physical Placement */
+        height: 60px;
     }
 
     .recommendation-form select {
