@@ -295,6 +295,7 @@ footer ul a:hover {
     .track {
         /* Physical Placement */
         line-height: normal;
+        gap: 1rem;
 
         /* Visual Effects */
         font-size: 50%;
@@ -308,7 +309,7 @@ footer ul a:hover {
 
     .track img {
         /* Physical Placement */
-        height: 60px;
+        height: 80px;
     }
 
     .recommendation-form select {
