@@ -136,6 +136,7 @@ main ul {
 .track img {
     /* Visual Effects */
     border-radius: 12px;
+    width: 200px;
 }
 
 .track img,
