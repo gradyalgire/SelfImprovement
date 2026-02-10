@@ -310,7 +310,7 @@ footer ul a:hover {
 
     .track img {
         /* Physical Placement */
-        height: 80px;
+        width: 80px;
     }
 
     .recommendation-form select {
