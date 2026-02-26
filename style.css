@@ -70,6 +70,11 @@ header nav a {
     text-decoration: none;
     color: var(--text-primary);
     padding: .5rem 1rem;
+    border-radius: .5rem;
+    transition: 
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
 }
 
 header nav a:hover {
@@ -77,6 +82,7 @@ header nav a:hover {
     background-color: var(--accent-hover);
     padding: .5rem 1rem;
     border-radius: .5rem;
+    transform: translateY(0px);
 }
 
 header nav a.active {
