@@ -19,11 +19,10 @@ const container = document.getElementById('playlist')
 container.innerHTML = songs.map(s => `
     <div class="track" style="background-color: ${s.background_color};">
         <a href="${s.spotify_link}" target="_blank">
-            <p>${s.sort_order}</p>
             <img src="images/tracks/track${s.sort_order}.png" alt="${s.title} - ${s.artist}">
         </a>
         <div class="track-content">
-            <h2>${s.title} - ${s.artist}</h2><br>
+            <h2>${s.sort_order}. ${s.title} - ${s.artist}</h2><br>
             <p>${s.description}</p>
             ${s.triggers?.length ? `<p><strong>Triggers:</strong> ${s.triggers.join(', ')}</p>` : ''}
         </div>

@@ -116,6 +116,11 @@ main p {
     font-size: 125%;
 }
 
+main p.note {
+    /* Visual Effects */
+    font-size: 80%;
+}
+
 main ul {
     /* Physical Placement */
     list-style-position: inside;
@@ -317,6 +322,16 @@ footer ul a:hover {
     main h1 {
         /* Physical Placement */
         line-height: 1;
+    }
+
+    main p.note {
+        /* Visual Effects */
+        font-size: 55%;
+    }
+
+    main iframe {
+        /* Physical Placement */
+        height: 152px;
     }
 
     .podcasts .podcast,
