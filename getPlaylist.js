@@ -19,7 +19,8 @@ const container = document.getElementById('playlist')
 container.innerHTML = songs.map(s => `
     <div class="track" style="background-color: ${s.background_color};">
         <a href="${s.spotify_link}" target="_blank">
-            <img src="${s.image_path}" alt="${s.title} - ${s.artist}">
+            <p>${s.sort_order}</p>
+            <img src="images/tracks/track${s.sort_order}.png" alt="${s.title} - ${s.artist}">
         </a>
         <div class="track-content">
             <h2>${s.title} - ${s.artist}</h2><br>

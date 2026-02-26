@@ -9,6 +9,7 @@
     --accent-bright: #ddc69a;
     --accent-warm: #c2a878;
     --accent-stone: #8a7f6a;
+    --accent-hover: #b2c0a3;
 
     /* Fonts */
     --font-heading: "Merriweather", serif;
@@ -19,6 +20,7 @@ html,
 body {
     /* Physical Placement */
     margin: 0;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -57,18 +59,31 @@ header h1 a {
 header nav {
     /* Physical Placement */
     display: flex;
-    gap: 1.5rem;
+    background-color: var(--accent-secondary);
+    border-radius: .5rem;
+    padding: .5rem;
+    gap: .3rem;
 }
 
 header nav a {
     /* Visual Effects */
     text-decoration: none;
     color: var(--text-primary);
+    padding: .5rem 1rem;
 }
 
 header nav a:hover {
     /* Visual Effects */
-    text-decoration: underline;
+    background-color: var(--accent-hover);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+header nav a.active {
+    /* Visual Effects */
+    background-color: var(--accent-primary);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
 }
 
 main {
@@ -121,6 +136,22 @@ main ul {
     border-radius: 12px;
 }
 
+.track a {
+    /* Physical Placement */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    gap: 1rem;
+}
+
+.track a p {
+    /* Physical Placement */
+    margin: 0;
+    font-weight: bold;
+}
+
 .track,
 .podcasts .podcast,
 .books .book,
@@ -135,6 +166,8 @@ main ul {
 
 .track img {
     /* Visual Effects */
+    display: block;
+    box-sizing: border-box;
     border-radius: 12px;
     width: 200px;
 }
@@ -236,12 +269,13 @@ footer ul a:hover {
 }
 
 /* Mobile Styles */
-@media (max-width: 1000px) {
+@media (max-width: 1020px) {
 
     header {
         /* Physical Placement */
-        display: inline;
-        padding: 2rem 2rem 0rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
 
         /* Visual Effects */
         font-size: 70%;
@@ -252,6 +286,7 @@ footer ul a:hover {
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0 0 1rem 0;
     }
 
     header nav {
@@ -259,22 +294,24 @@ footer ul a:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1.5rem;
+        padding: .5rem;
         gap: 1rem;
+        background-color: var(--accent-secondary);
     }
 
     header nav a {
         /* Physical Placement */
-        padding: .5rem;
+        padding: .5rem 1rem;
 
         /* Visual Effects */
-        background-color: var(--accent-secondary);
-        border-radius: 5rem;
+        border-radius: .5rem;
+        background-color: var(--accent-hover);
     }
 
     header nav a:hover {
         /* Visual Effects */
         text-decoration: none;
+        padding: .5rem 1rem;
     }
 
     main h1 {
@@ -300,6 +337,15 @@ footer ul a:hover {
 
         /* Visual Effects */
         font-size: 50%;
+    }
+
+    .track a {
+        /* Physical Placement */
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-primary);
+        gap: 1rem;
     }
 
     .track .track-content p {
