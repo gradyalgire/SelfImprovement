@@ -109,8 +109,6 @@ main p.note {
 
 main ul {
     list-style-position: inside;
-    padding-left: 1rem;
-    margin-left: 1rem;
     font-size: 115%;
 }
 
@@ -165,6 +163,140 @@ main ul {
     font-size: 70%;
     color: var(--text-primary);
     text-decoration: none;
+}
+
+.podcasts,
+.books {
+    background-color: var(--header-footer);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem 2.5rem;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+}
+
+.project-slider { margin: 0; padding: 0; box-sizing: border-box; }
+
+.card-wrapper {
+    margin: 0 60px 35px;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.card-list .card-item { list-style: none; }
+
+.card-list .card-item .card-link {
+    user-select: none;
+    display: flex;
+    background-color: var(--accent-secondary);
+    padding: 18px;
+    border-radius: 14px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    gap: 1rem;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-list .card-item .card-link:hover {
+    border-color: var(--text-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.card-list .card-link .card-image {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .badges {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.card-list .card-link .badge,
+.badge {
+    color: var(--text-primary);
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin: 14px 0 16px;
+    background: var(--accent-hover);
+    width: fit-content;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.card-list .card-link .card-title {
+    font-size: 150%;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.card-list .card-link .card-description {
+    font-size: 80%;
+    color: var(--text-primary);
+    max-height: 200px;
+    overflow: auto;
+}
+
+.card-list .card-link .card-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    height: 34px;
+    width: 34px;
+    color: var(--text-secondary);
+    border-radius: 50%;
+    margin: 20px 0 4px;
+    background: none;
+    cursor: pointer;
+    border: 1.5px solid var(--text-muted);
+    transform: rotate(-45deg);
+    transition: all 0.25s ease;
+}
+
+.card-list .card-link:hover .card-button {
+    color: var(--background);
+    background: var(--highlight);
+    border-color: var(--highlight);
+}
+
+.card-wrapper .swiper-pagination-bullet {
+    height: 8px;
+    width: 8px;
+    opacity: 0.4;
+    background: var(--text-secondary);
+    transition: opacity 0.2s, width 0.2s;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 20px;
+    border-radius: 4px;
+    background: var(--text-primary);
+}
+
+.card-wrapper .swiper-slider-button {
+    color: var(--text-primary);
+    opacity: 0.5;
+    padding: 0.3rem;
+    transition: 0.2s ease;
+    border-radius: 0.5rem;
+}
+
+.card-wrapper .swiper-slider-button:hover {
+    color: var(--highlight);
+    opacity: 1;
+    background-color: var(--accent-hover);
+}
+
+.card-wrapper .swiper-slider-button:active {
+    scale: 0.9;
 }
 
 .recommendation-form fieldset {
