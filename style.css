@@ -1,35 +1,31 @@
 :root {
-    /* Colors */
+    /* colors */
     --background: #f4f6f3;
     --header-footer: #7a9486;
     --text-primary: #28312b;
     --text-secondary: #5f6f65;
+    --text-muted: #8a9e91;
     --accent-primary: #9caf88;
     --accent-secondary: #c9d6c1;
     --accent-bright: #ddc69a;
     --accent-warm: #c2a878;
     --accent-stone: #8a7f6a;
     --accent-hover: #b2c0a3;
+    --border: #a8b89e;
+    --highlight: #7a9486;
 
-    /* Fonts */
+    /* fonts */
     --font-heading: "Merriweather", serif;
     --font-body: "Inter", system-ui, sans-serif;
 }
 
-html,
-body {
-    margin: 0;
-    scrollbar-gutter: stable;
-}
-
 body {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     background-color: var(--background);
     font-family: var(--font-body);
 }
 
+/* header */
 header {
     position: sticky;
     top: 0;
@@ -37,13 +33,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 2rem;
+    padding: 1.5rem 2.5rem;
     background-color: var(--header-footer);
     color: var(--text-primary);
 }
 
 header h1 a {
-    font-size: 200%;
+    font-size: 150%;
     text-decoration: none;
     color: var(--text-primary);
 }
@@ -52,16 +48,17 @@ header nav {
     display: flex;
     background-color: var(--accent-secondary);
     border-radius: .5rem;
-    padding: .5rem;
+    padding: .3rem .5rem;
     gap: .3rem;
 }
 
 header nav a {
+    font-size: 85%;
     text-decoration: none;
     color: var(--text-primary);
-    padding: .5rem 1rem;
+    padding: .5rem .7rem;
     border-radius: .5rem;
-    transition: 
+    transition:
         background-color 0.2s ease,
         color 0.2s ease,
         transform 0.15s ease;
@@ -69,21 +66,17 @@ header nav a {
 
 header nav a:hover {
     background-color: var(--accent-hover);
-    padding: .5rem 1rem;
-    border-radius: .5rem;
-    transform: translateY(0px);
 }
 
 header nav a.active {
     background-color: var(--accent-primary);
-    padding: .5rem 1rem;
-    border-radius: .5rem;
 }
 
+/* main styling */
 main {
     flex: 1;
-    padding: 3rem 2rem;
-    line-height: 1.5rem;
+    padding: 3rem 2.5rem;
+    line-height: 1.3rem;
     color: var(--text-primary);
 }
 
@@ -92,7 +85,7 @@ main h1 {
 }
 
 main h2 {
-    font-size: 175%;
+    font-size: 150%;
 }
 
 main h3 {
@@ -100,7 +93,7 @@ main h3 {
 }
 
 main p {
-    font-size: 125%;
+    font-size: 110%;
 }
 
 main p.note {
@@ -112,9 +105,14 @@ main ul {
     font-size: 115%;
 }
 
+/* playlist page */
 .track {
+    display: flex;
+    gap: 2rem;
+    justify-content: left;
+    align-items: center;
     padding: 1rem;
-    margin: 1rem 0rem;
+    margin: 1rem 0;
     border: 1px solid black;
     border-radius: 12px;
 }
@@ -133,7 +131,28 @@ main ul {
     font-weight: bold;
 }
 
-.track,
+.track img {
+    display: block;
+    box-sizing: border-box;
+    border-radius: 12px;
+    width: 200px;
+    border: 1px solid var(--text-primary);
+}
+
+/* media styling */
+.podcasts,
+.books,
+.videos,
+.movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-primary);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+}
+
 .podcasts .podcast,
 .books .book,
 .videos .video,
@@ -144,14 +163,6 @@ main ul {
     align-items: center;
 }
 
-.track img {
-    display: block;
-    box-sizing: border-box;
-    border-radius: 12px;
-    width: 200px;
-}
-
-.track img,
 .podcasts .podcast img,
 .books .book img,
 .videos .video img,
@@ -165,19 +176,12 @@ main ul {
     text-decoration: none;
 }
 
-.podcasts,
-.books {
-    background-color: var(--header-footer);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3rem 2.5rem;
-    padding: 2.5rem;
-    border-radius: 1rem;
-    border: 1px solid var(--border);
+/* content sliders */
+.project-slider {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-.project-slider { margin: 0; padding: 0; box-sizing: border-box; }
 
 .card-wrapper {
     margin: 0 60px 35px;
@@ -185,7 +189,9 @@ main ul {
     overflow: hidden;
 }
 
-.card-list .card-item { list-style: none; }
+.card-list .card-item {
+    list-style: none;
+}
 
 .card-list .card-item .card-link {
     user-select: none;
@@ -202,7 +208,7 @@ main ul {
 .card-list .card-item .card-link:hover {
     border-color: var(--text-secondary);
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-list .card-link .card-image {
@@ -299,6 +305,7 @@ main ul {
     scale: 0.9;
 }
 
+/* recommendations page */
 .recommendation-form fieldset {
     background-color: var(--accent-secondary);
 }
@@ -322,16 +329,15 @@ main ul {
 }
 
 .recommendation-form button:hover {
-    border-radius: .5rem;
-    padding: .5rem;
     background-color: var(--accent-bright);
 }
 
+/* footer */
 footer {
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 2rem 2rem;
+    padding: 2rem;
     background-color: var(--header-footer);
 }
 
@@ -363,11 +369,11 @@ footer ul a:hover {
     line-height: 1.5;
 }
 
-/* Mobile Styles */
+/* mobile */
 @media (max-width: 1020px) {
 
+    /* header */
     header {
-        display: flex;
         flex-direction: column;
         padding: 1rem;
         font-size: 70%;
@@ -381,25 +387,22 @@ footer ul a:hover {
     }
 
     header nav {
-        display: flex;
         justify-content: center;
         align-items: center;
         padding: .5rem;
         gap: 1rem;
-        background-color: var(--accent-secondary);
     }
 
     header nav a {
         padding: .5rem 1rem;
-        border-radius: .5rem;
         background-color: var(--accent-hover);
     }
 
     header nav a:hover {
         text-decoration: none;
-        padding: .5rem 1rem;
     }
 
+    /* main styling */
     main h1 {
         line-height: 1;
     }
@@ -412,16 +415,7 @@ footer ul a:hover {
         height: 152px;
     }
 
-    .podcasts .podcast,
-    .books .book,
-    .videos .video,
-    .movies .movie{
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        align-items: center;
-    }
-
+    /* playlist page */
     .track {
         line-height: normal;
         gap: 1rem;
@@ -429,10 +423,6 @@ footer ul a:hover {
     }
 
     .track a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: var(--text-primary);
         gap: 1rem;
     }
 
@@ -445,6 +435,17 @@ footer ul a:hover {
         width: 80px;
     }
 
+    /* media styling */
+    .podcasts .podcast,
+    .books .book,
+    .videos .video,
+    .movies .movie {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* recommendation page */
     .recommendation-form select {
         width: 260px;
     }
@@ -454,6 +455,7 @@ footer ul a:hover {
         width: 250px;
     }
 
+    /* footer */
     footer {
         padding: 1rem 2rem;
         font-size: 70%;
@@ -462,6 +464,5 @@ footer ul a:hover {
     footer ul {
         display: inline;
         line-height: 2;
-        list-style: none;
     }
 }
