@@ -13,8 +13,7 @@ new Swiper('.podcasts .card-wrapper', {
         prevEl: '.podcasts .swiper-button-prev',
     },
     breakpoints: {
-        768:  { slidesPerView: 1 },
-        1200: { slidesPerView: 2 }
+        0:  { slidesPerView: 1 }
     }
 });
 
@@ -33,8 +32,7 @@ new Swiper('.swiper-books .card-wrapper', {
         prevEl: '.swiper-books .swiper-button-prev',
     },
     breakpoints: {
-        768:  { slidesPerView: 1 },
-        1200: { slidesPerView: 2 }
+        0:  { slidesPerView: 1 }
     }
 });
 
@@ -53,8 +51,7 @@ new Swiper('.videos .card-wrapper', {
         prevEl: '.videos .swiper-button-prev',
     },
     breakpoints: {
-        768:  { slidesPerView: 1 },
-        1200: { slidesPerView: 2 }
+        0:  { slidesPerView: 1 }
     }
 });
 
@@ -73,7 +70,6 @@ new Swiper('.swiper-movies .card-wrapper', {
         prevEl: '.swiper-movies .swiper-button-prev',
     },
     breakpoints: {
-        768:  { slidesPerView: 2 },
-        1200: { slidesPerView: 3 }
+        0:  { slidesPerView: 1 }
     }
 });

@@ -139,7 +139,8 @@ main ul {
     border: 1px solid var(--text-primary);
 }
 
-/* media styling */
+
+/* media content sliders */
 .podcasts,
 .books,
 .videos,
@@ -148,36 +149,12 @@ main ul {
     justify-content: center;
     align-items: center;
     background-color: var(--accent-primary);
-    padding: 2.5rem;
+    padding: 1rem;
     border-radius: 1rem;
     border: 1px solid var(--border);
 }
 
-.podcasts .podcast,
-.books .book,
-.videos .video,
-.movies .movie {
-    display: flex;
-    gap: 2rem;
-    justify-content: left;
-    align-items: center;
-}
-
-.podcasts .podcast img,
-.books .book img,
-.videos .video img,
-.movies .movie img {
-    border: 1px solid var(--text-primary);
-}
-
-.podcasts .podcast .notable-episodes a {
-    font-size: 70%;
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-/* content sliders */
-.project-slider {
+.media-slider {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -214,39 +191,34 @@ main ul {
 .card-list .card-link .card-image {
     object-fit: cover;
     border-radius: 10px;
-}
-
-.card-list .card-link .badges {
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-}
-
-.card-list .card-link .badge,
-.badge {
-    color: var(--text-primary);
-    padding: 5px 12px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    margin: 14px 0 16px;
-    background: var(--accent-hover);
-    width: fit-content;
-    border-radius: 50px;
-    border: 1px solid var(--border);
-    font-family: 'JetBrains Mono', monospace;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .card-list .card-link .card-title {
-    font-size: 150%;
+    font-size: 100%;
     color: var(--text-primary);
     font-weight: 600;
+}
+
+.card-host,
+.card-author,
+.card-creator,
+.card-producer {
+    font-size: 80%;
+    color: var(--text-secondary);
 }
 
 .card-list .card-link .card-description {
     font-size: 80%;
     color: var(--text-primary);
-    max-height: 200px;
+    max-height: 138px;
     overflow: auto;
+}
+
+.card-list .card-link .card-triggers {
+    font-size: 80%;
+    color: var(--text-primary);
 }
 
 .card-list .card-link .card-button {
@@ -436,13 +408,67 @@ footer ul a:hover {
     }
 
     /* media styling */
-    .podcasts .podcast,
-    .books .book,
-    .videos .video,
-    .movies .movie {
+    .podcasts,
+    .books,
+    .videos,
+    .movies {
+        padding: 0.75rem;
+    }
+
+    .card-wrapper {
+        margin: 0 8px 30px;
+        padding: 10px 5px;
+    }
+
+    /* Stack card content vertically on mobile */
+    .card-list .card-item .card-link {
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        gap: 0.75rem;
+        padding: 14px;
+    }
+
+    .card-list .card-link .card-image {
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* Video iframes: full width, 16:9 ratio */
+    .card-list .card-link iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 8px;
+    }
+
+    .card-list .card-link .card-title {
+        font-size: 95%;
+        text-align: center;
+    }
+
+    .card-host,
+    .card-author,
+    .card-creator,
+    .card-producer {
+        font-size: 80%;
+        text-align: center;
+    }
+
+    .card-list .card-link .card-description {
+        font-size: 85%;
+        max-height: 200px;
+        line-height: 1.4;
+        overflow: auto;
+    }
+
+    .card-list .card-item-content {
+        width: 100%;
+    }
+
+    .card-wrapper .swiper-slider-button {
+        display: none;
     }
 
     /* recommendation page */
