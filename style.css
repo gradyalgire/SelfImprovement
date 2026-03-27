@@ -106,32 +106,18 @@ main ul {
 }
 
 /* playlist page */
-.track {
+.song {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: left;
-    align-items: center;
+    align-items: top;
     padding: 1rem;
-    margin: 1rem 0;
-    border: 1px solid black;
+    margin: 1rem 0rem;
+    border: 1px solid var(--text-primary);
     border-radius: 12px;
 }
 
-.track a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--text-primary);
-    gap: 1rem;
-}
-
-.track a p {
-    margin: 0;
-    font-weight: bold;
-}
-
-.track img {
+.song img {
     display: block;
     box-sizing: border-box;
     border-radius: 12px;
@@ -139,6 +125,19 @@ main ul {
     border: 1px solid var(--text-primary);
 }
 
+.song-content {
+    margin-top: .5rem;
+}
+
+.song-content .artist {
+    opacity: .8;
+}
+
+.song-content .description {
+    min-height: 4lh;
+    max-height: 4lh;
+    overflow-y: auto;
+}
 
 /* media content sliders */
 .podcasts,
@@ -375,6 +374,10 @@ footer ul a:hover {
     }
 
     /* main styling */
+    main {
+        padding: 1.5rem 1rem;
+    }
+
     main h1 {
         line-height: 1;
     }
@@ -388,23 +391,37 @@ footer ul a:hover {
     }
 
     /* playlist page */
-    .track {
+    .song {
+        padding: .5rem;
         line-height: normal;
-        gap: 1rem;
+        gap: .5rem;
         font-size: 50%;
     }
 
-    .track a {
-        gap: 1rem;
+    .song img {
+        width: 100px;
     }
 
-    .track .track-content p {
-        max-height: 50px;
+    .song-content {
+        margin-top: 0rem;
+    }
+
+    .song-content .artist {
+        opacity: .8;
+    }
+
+    .song-content .description {
+        min-height: 3lh;
+        max-height: 3lh;
         overflow-y: auto;
+        margin-bottom: .5rem;
     }
 
-    .track img {
-        width: 80px;
+    .song-content .triggers {
+        min-height: 2lh;
+        max-height: 2lh;
+        overflow-y: auto;
+        margin-bottom: 0;
     }
 
     /* media styling */

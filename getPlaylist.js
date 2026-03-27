@@ -17,14 +17,15 @@ if (error) {
 const container = document.getElementById('playlist')
 
 container.innerHTML = songs.map(s => `
-    <div class="track" style="background-color: ${s.background_color};">
+    <div class="song" style="background-color: ${s.background_color};">
         <a href="${s.spotify_link}" target="_blank">
-            <img src="images/tracks/track${s.sort_order}.png" alt="${s.title} - ${s.artist}">
+            <img src="images/songs/song${s.sort_order}.png" alt="${s.title} - ${s.artist}">
         </a>
-        <div class="track-content">
-            <h2>${s.sort_order}. ${s.title} - ${s.artist}</h2><br>
-            <p>${s.description}</p>
-            ${s.triggers?.length ? `<p><strong>Triggers:</strong> ${s.triggers.join(', ')}</p>` : ''}
+        <div class="song-content">
+            <h2 class="title">${s.sort_order}. ${s.title}</h2>
+            <h4 class="artist">${s.artist}</h4><br>
+            <p class="description">${s.description}</p>
+            ${s.triggers?.length ? `<p class="triggers"><strong>Triggers:</strong> ${s.triggers.join(', ')}</p>` : ''}
         </div>
     </div>
 `).join('')
