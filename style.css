@@ -139,6 +139,10 @@ main ul {
     overflow-y: auto;
 }
 
+.song-content .triggers {
+    margin-bottom: 0;
+}
+
 /* media content sliders */
 .podcasts,
 .books,
