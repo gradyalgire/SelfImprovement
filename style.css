@@ -105,6 +105,17 @@ main ul {
     font-size: 115%;
 }
 
+.explicit-tag {
+    font-size: 50%;
+    background: black;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 3px;
+    vertical-align: middle;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
 /* playlist page */
 .song {
     display: flex;
@@ -392,6 +403,10 @@ footer ul a:hover {
 
     main iframe {
         height: 152px;
+    }
+
+    .explicit-tag {
+        padding: 1px 2.5px;
     }
 
     /* playlist page */
