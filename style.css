@@ -13,6 +13,7 @@
     --accent-hover: #b2c0a3;
     --border: #a8b89e;
     --highlight: #7a9486;
+    --media-slider-background: #dae0dd;
 
     /* fonts */
     --font-heading: "Merriweather", serif;
@@ -159,10 +160,7 @@ main ul {
 .books,
 .videos,
 .movies {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--accent-primary);
+    background-color: var(--media-slider-background);
     padding: 1rem;
     border-radius: 1rem;
     border: 1px solid var(--border);
@@ -174,68 +172,61 @@ main ul {
     box-sizing: border-box;
 }
 
-.card-wrapper {
+.media-wrapper {
     margin: 0 60px 35px;
     padding: 20px 10px;
     overflow: hidden;
 }
 
-.card-list .card-item {
+.media-list .media-item {
     list-style: none;
 }
 
-.card-list .card-item .card-link {
+.media-list .media-item .media-content {
     user-select: none;
     display: flex;
-    background-color: var(--accent-secondary);
+    background-color: white;
     padding: 18px;
     border-radius: 14px;
     text-decoration: none;
     border: 1px solid var(--border);
     gap: 1rem;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-list .card-item .card-link:hover {
-    border-color: var(--text-secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-.card-list .card-link .card-image {
+.media-list .media-content .media-image {
     object-fit: cover;
     border-radius: 10px;
     max-width: 200px;
     max-height: 200px;
 }
 
-.card-list .card-link .card-title {
+.media-list .media-content .media-title {
     font-size: 100%;
     color: var(--text-primary);
     font-weight: 600;
 }
 
-.card-host,
-.card-author,
-.card-creator,
-.card-producer {
+.media-host,
+.media-author,
+.media-creator,
+.media-producer {
     font-size: 80%;
     color: var(--text-secondary);
 }
 
-.card-list .card-link .card-description {
+.media-list .media-content .media-description {
     font-size: 80%;
     color: var(--text-primary);
     max-height: 138px;
     overflow: auto;
 }
 
-.card-list .card-link .card-triggers {
+.media-list .media-content .media-triggers {
     font-size: 80%;
     color: var(--text-primary);
 }
 
-.card-list .card-link .card-button {
+.media-list .media-content .media-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,13 +243,13 @@ main ul {
     transition: all 0.25s ease;
 }
 
-.card-list .card-link:hover .card-button {
+.media-list .media-content:hover .media-button {
     color: var(--background);
     background: var(--highlight);
     border-color: var(--highlight);
 }
 
-.card-wrapper .swiper-pagination-bullet {
+.media-wrapper .swiper-pagination-bullet {
     height: 8px;
     width: 8px;
     opacity: 0.4;
@@ -266,14 +257,14 @@ main ul {
     transition: opacity 0.2s, width 0.2s;
 }
 
-.card-wrapper .swiper-pagination-bullet-active {
+.media-wrapper .swiper-pagination-bullet-active {
     opacity: 1;
     width: 20px;
     border-radius: 4px;
     background: var(--text-primary);
 }
 
-.card-wrapper .swiper-slider-button {
+.media-wrapper .swiper-slider-button {
     color: var(--text-primary);
     opacity: 0.5;
     padding: 0.3rem;
@@ -281,13 +272,13 @@ main ul {
     border-radius: 0.5rem;
 }
 
-.card-wrapper .swiper-slider-button:hover {
+.media-wrapper .swiper-slider-button:hover {
     color: var(--highlight);
     opacity: 1;
     background-color: var(--accent-hover);
 }
 
-.card-wrapper .swiper-slider-button:active {
+.media-wrapper .swiper-slider-button:active {
     scale: 0.9;
 }
 
