@@ -13,6 +13,7 @@
     --accent-hover: #b2c0a3;
     --border: #a8b89e;
     --highlight: #7a9486;
+    --media-slider-background: #dae0dd;
 
     /* fonts */
     --font-heading: "Merriweather", serif;
@@ -159,10 +160,7 @@ main ul {
 .books,
 .videos,
 .movies {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--accent-primary);
+    background-color: var(--media-slider-background);
     padding: 1rem;
     border-radius: 1rem;
     border: 1px solid var(--border);
@@ -174,91 +172,72 @@ main ul {
     box-sizing: border-box;
 }
 
-.card-wrapper {
+.media-wrapper {
     margin: 0 60px 35px;
     padding: 20px 10px;
     overflow: hidden;
 }
 
-.card-list .card-item {
+.media-list .media-item {
     list-style: none;
 }
 
-.card-list .card-item .card-link {
+.media-list .media-item .media-content {
     user-select: none;
     display: flex;
-    background-color: var(--accent-secondary);
+    background-color: white;
     padding: 18px;
     border-radius: 14px;
     text-decoration: none;
     border: 1px solid var(--border);
     gap: 1rem;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-list .card-item .card-link:hover {
-    border-color: var(--text-secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.media-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card-list .card-link .card-image {
+.media-list .media-content .media-image {
     object-fit: cover;
     border-radius: 10px;
     max-width: 200px;
     max-height: 200px;
 }
 
-.card-list .card-link .card-title {
+.media-list .media-content iframe {
+    border-radius: .5rem;
+}
+
+.media-list .media-content .media-title {
     font-size: 100%;
     color: var(--text-primary);
     font-weight: 600;
 }
 
-.card-host,
-.card-author,
-.card-creator,
-.card-producer {
+.media-host,
+.media-author,
+.media-creator,
+.media-producer {
     font-size: 80%;
     color: var(--text-secondary);
 }
 
-.card-list .card-link .card-description {
+.media-list .media-content .media-description {
     font-size: 80%;
     color: var(--text-primary);
-    max-height: 138px;
+    max-height: 5lh;
     overflow: auto;
 }
 
-.card-list .card-link .card-triggers {
+.media-list .media-content .media-triggers {
     font-size: 80%;
     color: var(--text-primary);
+    max-height: 1lh;
 }
 
-.card-list .card-link .card-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1rem;
-    height: 34px;
-    width: 34px;
-    color: var(--text-secondary);
-    border-radius: 50%;
-    margin: 20px 0 4px;
-    background: none;
-    cursor: pointer;
-    border: 1.5px solid var(--text-muted);
-    transform: rotate(-45deg);
-    transition: all 0.25s ease;
-}
-
-.card-list .card-link:hover .card-button {
-    color: var(--background);
-    background: var(--highlight);
-    border-color: var(--highlight);
-}
-
-.card-wrapper .swiper-pagination-bullet {
+.media-wrapper .swiper-pagination-bullet {
     height: 8px;
     width: 8px;
     opacity: 0.4;
@@ -266,14 +245,13 @@ main ul {
     transition: opacity 0.2s, width 0.2s;
 }
 
-.card-wrapper .swiper-pagination-bullet-active {
+.media-wrapper .swiper-pagination-bullet-active {
     opacity: 1;
-    width: 20px;
     border-radius: 4px;
     background: var(--text-primary);
 }
 
-.card-wrapper .swiper-slider-button {
+.media-wrapper .swiper-slider-button {
     color: var(--text-primary);
     opacity: 0.5;
     padding: 0.3rem;
@@ -281,13 +259,12 @@ main ul {
     border-radius: 0.5rem;
 }
 
-.card-wrapper .swiper-slider-button:hover {
-    color: var(--highlight);
+.media-wrapper .swiper-slider-button:hover {
+    color: var(--text-primary);
     opacity: 1;
-    background-color: var(--accent-hover);
 }
 
-.card-wrapper .swiper-slider-button:active {
+.media-wrapper .swiper-slider-button:active {
     scale: 0.9;
 }
 
@@ -395,14 +372,16 @@ footer ul a:hover {
 
     main h1 {
         line-height: 1;
+        font-size: 200%;
+    }
+
+    main p {
+        line-height: 1.3;
+        font-size: 80%;
     }
 
     main p.note {
         font-size: 55%;
-    }
-
-    main iframe {
-        height: 152px;
     }
 
     .explicit-tag {
@@ -410,6 +389,11 @@ footer ul a:hover {
     }
 
     /* playlist page */
+    .playlist iframe {
+        height: 152px;
+        border-radius: .5rem;
+    }
+
     .song {
         padding: .5rem;
         line-height: normal;
@@ -448,63 +432,68 @@ footer ul a:hover {
     .books,
     .videos,
     .movies {
-        padding: 0.75rem;
+        padding: .5rem;
     }
 
-    .card-wrapper {
-        margin: 0 8px 30px;
-        padding: 10px 5px;
+    .media-wrapper {
+        margin: 0 0 20px;
+        padding: 20px 10px;
     }
 
-    /* Stack card content vertically on mobile */
-    .card-list .card-item .card-link {
+    .media-list .media-item .media-content {
+        display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
-        gap: 0.75rem;
-        padding: 14px;
+        padding: 10px;
+        gap: 0rem;
+        min-height: 320px;
     }
 
-    .card-list .card-link .card-image {
-        max-width: 100px;
-        max-height: 100px;
-        object-fit: cover;
-        border-radius: 8px;
+    .media-item-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
-    /* Video iframes: full width, 16:9 ratio */
-    .card-list .card-link iframe {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        border-radius: 8px;
+    .media-list .media-content .media-image {
+        border-radius: 10px;
+        height: 169px;
     }
 
-    .card-list .card-link .card-title {
-        font-size: 95%;
-        text-align: center;
+    .media-list .media-content iframe {
+        width: 300px;
+        height: 169px;
+        border-radius: .5rem;
     }
 
-    .card-host,
-    .card-author,
-    .card-creator,
-    .card-producer {
+    .media-list .media-content .media-title {
+        font-size: 90%;
+    }
+
+    .media-host,
+    .media-author,
+    .media-creator,
+    .media-producer {
         font-size: 80%;
-        text-align: center;
     }
 
-    .card-list .card-link .card-description {
-        font-size: 85%;
-        max-height: 200px;
-        line-height: 1.4;
-        overflow: auto;
+    .media-list .media-content .media-description {
+        font-size: 70%;
+        max-height: 4lh;
     }
 
-    .card-list .card-item-content {
-        width: 100%;
+    .media-list .media-content .media-triggers {
+        font-size: 60%;
+        max-height: 1lh;
     }
 
-    .card-wrapper .swiper-slider-button {
+    .media-wrapper .swiper-slider-button {
         display: none;
+    }
+
+    .media-wrapper .swiper-pagination {
+        height: 15px;
     }
 
     /* recommendation page */
