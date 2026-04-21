@@ -18,7 +18,7 @@ new Swiper('.podcasts .media-wrapper', {
     }
 });
 
-// Books — up to 2 slides per view
+// Books — up to 3 slides per view
 new Swiper('.swiper-books .media-wrapper', {
     loop: true,
     spaceBetween: 30,
@@ -36,7 +36,6 @@ new Swiper('.swiper-books .media-wrapper', {
         0:  { slidesPerView: 1 },
         1020:  { slidesPerView: 2 },
         1420:  { slidesPerView: 3 }
-
     }
 });
 
@@ -55,11 +54,12 @@ new Swiper('.videos .media-wrapper', {
         prevEl: '.videos .swiper-button-prev',
     },
     breakpoints: {
-        0:  { slidesPerView: 1 }
+        0:  { slidesPerView: 1 },
+        1420:  { slidesPerView: 2 }
     }
 });
 
-// Movies — up to 3 slides per view
+// Movies — up to 2 slides per view
 new Swiper('.swiper-movies .media-wrapper', {
     loop: true,
     spaceBetween: 30,
@@ -74,6 +74,8 @@ new Swiper('.swiper-movies .media-wrapper', {
         prevEl: '.swiper-movies .swiper-button-prev',
     },
     breakpoints: {
-        0:  { slidesPerView: 1 }
+        0:  { slidesPerView: 1 },
+        1020:  { slidesPerView: 2 },
+        1420:  { slidesPerView: 3 }
     }
 });
