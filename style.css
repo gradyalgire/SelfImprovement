@@ -103,7 +103,6 @@ main p.note {
 
 main ul {
     list-style-position: inside;
-    font-size: 115%;
 }
 
 .explicit-tag {
@@ -138,21 +137,46 @@ main ul {
 }
 
 .song-content {
-    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.song-content .artist {
+.song-artist {
     opacity: .8;
 }
 
-.song-content .description {
+.song-description {
+    margin: 0;
     min-height: 4lh;
     max-height: 4lh;
     overflow-y: auto;
 }
 
-.song-content .triggers {
-    margin-bottom: 0;
+.song-triggers {
+    margin: 0;
+}
+
+.song-triggers-suggest {
+    text-decoration: none;
+    color: var(--text-primary);
+    opacity: .7;
+    width: fit-content;
+}
+
+.song-triggers-suggest:hover {
+    opacity: 1;
+}
+
+.song-lyrics {
+    text-decoration: none;
+    color: var(--text-primary);
+    opacity: .7;
+    width: fit-content;
+}
+
+.song-lyrics:hover {
+    opacity: 1;
 }
 
 /* media content sliders */

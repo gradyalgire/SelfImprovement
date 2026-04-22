@@ -22,10 +22,13 @@ container.innerHTML = songs.map(s => `
             <img src="images/songs/song${s.sort_order}.png" alt="${s.title} - ${s.artist}">
         </a>
         <div class="song-content">
-            <h2 class="title">${s.sort_order}. ${s.title}${s.explicit ? ' <span class="explicit-tag">E</span>' : ''}</h2>
-            <h4 class="artist">${s.artist}</h4><br>
-            <p class="description">${s.description}</p>
-            ${s.triggers?.length ? `<p class="triggers"><strong>Triggers:</strong> ${s.triggers.join(', ')}</p>` : ''}
+            <div class="song-title-artist">
+                <h2 class="song-title">${s.sort_order}. ${s.title}${s.explicit ? ' <span class="explicit-tag">E</span>' : ''}</h2>
+                <h4 class="song-artist">${s.artist}</h4>
+            </div>
+            <p class="song-description">${s.description}</p>
+            ${s.triggers?.length ? `<p class="song-triggers"><strong>Triggers:</strong> ${s.triggers.join(', ')}</p>` : '<a href="recommendations.html" class="song-triggers-suggest">Suggest Triggers</a>'}
+            <a class="song-lyrics" href="${s.genius_link}" target="_blank">View Lyrics</a>
         </div>
     </div>
 `).join('')
