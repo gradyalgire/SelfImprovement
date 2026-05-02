@@ -45,7 +45,7 @@ function loadForm(type, clickedButton) {
     switch (type) {
         case "song":
             container.innerHTML = `
-                <form class="recommendation-form">
+                <form class="recommendation-form netlify">
                     <fieldset>
                         <legend>Song Details</legend>
                         <div class="recommendation-form-group">
@@ -69,7 +69,7 @@ function loadForm(type, clickedButton) {
             break;
         case "media":
             container.innerHTML = `
-                <form class="recommendation-form">
+                <form class="recommendation-form netlify">
                     <fieldset>
                         <legend>Media Details</legend>
                         <div class="recommendation-form-group">
@@ -104,7 +104,7 @@ function loadForm(type, clickedButton) {
             break;
         case "trigger":
             container.innerHTML = `
-                <form class="recommendation-form">
+                <form class="recommendation-form netlify">
                     <fieldset>
                         <legend>Trigger Details</legend>
                         <div class="recommendation-form-group">
@@ -119,7 +119,7 @@ function loadForm(type, clickedButton) {
             break;
         case "other":
             container.innerHTML = `
-                <form class="recommendation-form">
+                <form class="recommendation-form netlify">
                     <fieldset>
                         <legend>Your Recommendation</legend>
                         <div class="recommendation-form-group">
