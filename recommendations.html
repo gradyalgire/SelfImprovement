@@ -25,53 +25,22 @@
 
     <main>
 
-        <section class="recommendation-form">
+        <section class="recommendations">
 
             <h1>Recommendations</h1><br>
-
             <p>This page exists so you can suggest additions that may help others move forward.</p>
-
             <p>All recommendations are reviewed carefully. Songs are analyzed for emotional impact, lyrical themes, and whether they support growth rather than escapism. Media submissions are evaluated for long-term value, mindset alignment, and practical usefulness.</p>
+            <p>Not every request will be added. This is intentional.</p>
 
-            <p>Not every request will be added. This is intentional.</p><br><br>
+            <h3>What are you recommending?</h3>
+            <div class="recommendation-options">
+                <button type="button" class="recommendation-option" onclick="loadForm('song', 0)">Song</button>
+                <button type="button" class="recommendation-option" onclick="loadForm('media', 1)">Media</button>
+                <button type="button" class="recommendation-option" onclick="loadForm('trigger', 2)">Trigger</button>
+                <button type="button" class="recommendation-option" onclick="loadForm('other', 3)">Other</button>
+            </div>
 
-            <h2>Submit a Recommendation</h2><br>
-
-            <form name="recommendations" netlify>
-
-                <fieldset>
-
-                    <label for="type"><strong>What are you recommending?</strong></label><br>
-                    <select id="type" name="type" required>
-                        <option value="">-- Select an option --</option>
-                        <option value="song">Song (Playlist)</option>
-                        <option value="media">Media (Podcast, Book, Video, Movie, Quote)</option>
-                        <option value="trigger">Trigger</option>
-                        <option value="other">Other</option>
-                    </select><br><br>
-
-                    <label for="title"><strong>Title / Name</strong></label><br>
-                    <input type="text" id="title" name="title" required><br><br>
-
-                    <label for="creator"><strong>Artist / Author / Creator (if applicable)</strong></label><br>
-                    <input type="text" id="creator" name="creator"><br><br>
-
-                    <label for="email"><strong>Your Email Address</strong></label><br>
-                    <input type="email" id="email" name="email" required><br><br>
-
-                    <label for="reason"><strong>Why should this be added?</strong></label><br>
-                    <p>Explain how this helped you and why it supports self-improvement, growth, or rebuilding.</p>
-                    <textarea id="reason" name="reason" rows="6" required></textarea><br><br>
-
-                    <button type="submit">Submit Recommendation</button>
-
-                </fieldset>
-
-            </form>
-
-            <br><br>
-
-            <p><i>*Song submissions are reviewed line by line. Media submissions are reviewed for emotional impact, clarity, and long-term usefulness. If a recommendation reinforces avoidance, fixation, false reassurance, it will not be added.</i></p>
+            <div id="recommendation-form"></div>
 
         </section>
 
@@ -193,7 +162,7 @@
 
         </section>
     </footer>
-
+    <script src="getRecommendation.js"></script>
 </body>
 
 </html>
