@@ -124,7 +124,7 @@ function loadForm(type, clickedButton) {
                         <legend>Your Recommendation</legend>
                         <div class="recommendation-form-group">
                             <label for="suggestion"><strong>What are you suggesting?</strong></label>
-                            <p class="suggestion">Suggest anything that does not fit into the other categories.</p>
+                            <p class="recommendation-form-note">Suggest anything that does not fit into the other categories.</p>
                             <textarea id="suggestion" name="suggestion" rows="5" required placeholder="Describe your recommendation"></textarea>
                         </div>
                         ${formReason}

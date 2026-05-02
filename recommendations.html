@@ -27,20 +27,64 @@
 
         <section class="recommendations">
 
-            <h1>Recommendations</h1><br>
-            <p>This page exists so you can suggest additions that may help others move forward.</p>
-            <p>All recommendations are reviewed carefully. Songs are analyzed for emotional impact, lyrical themes, and whether they support growth rather than escapism. Media submissions are evaluated for long-term value, mindset alignment, and practical usefulness.</p>
-            <p>Not every request will be added. This is intentional.</p>
+            <div class="recommendations-info">
 
-            <h3>What are you recommending?</h3>
-            <div class="recommendation-options">
-                <button type="button" class="recommendation-option" onclick="loadForm('song', 0)">Song</button>
-                <button type="button" class="recommendation-option" onclick="loadForm('media', 1)">Media</button>
-                <button type="button" class="recommendation-option" onclick="loadForm('trigger', 2)">Trigger</button>
-                <button type="button" class="recommendation-option" onclick="loadForm('other', 3)">Other</button>
+                <div class="recommendations-hero">
+                    <h1>Recommendations</h1><br>
+                    <p>This page exists so you can suggest additions that may help others move forward.</p>
+                    <p>All recommendations are reviewed carefully. Songs are analyzed for emotional impact, lyrical themes, and whether they support growth rather than escapism. Media submissions are evaluated for long-term value, mindset alignment, and practical usefulness.</p>
+                    <p>Not every request will be added. This is intentional.</p>
+                </div>
+
+                <div class="recommendations-info-card">
+                    <h2>What makes a good recommendation?</h2>
+                    <ul class="recommendations-checklist">
+                        <li>Encourages growth, discipline, healing, or rebuilding</li>
+                        <li>Has long-term value, not just emotional escape</li>
+                        <li>Handles pain honestly without glorifying it</li>
+                        <li>Gives people something useful to carry forward</li>
+                    </ul>
+                </div>
+
+                <div class="recommendations-info-card">
+                    <h2>Submission examples:</h2>
+                    <div class="recommendations-example great">
+                        <h3>Great reason</h3>
+                        <p>“This gave me a clear way to think about rebuilding myself instead of
+                        staying stuck in regret. It helped me focus on discipline, self-respect,
+                        and becoming better through the pain rather than being controlled by it.”</p>
+                    </div>
+                    <div class="recommendations-example good">
+                        <h3>Good reason</h3>
+                        <p>“This helped me stop seeing failure as final and start treating it as part of rebuilding.”</p>
+                    </div>
+                    <div class="recommendations-example weak">
+                        <h3>Weak reason</h3>
+                        <p>“I like this song.”</p>
+                    </div>
+                </div>
+
+                <div class="recommendations-info-card">
+                    <h2>What may not be added?</h2>
+                    <ul>
+                        <li>Songs with no growth angle</li>
+                        <li>Content that supports self-destruction</li>
+                        <li>Media with no clear rebuilding value</li>
+                        <li>Submissions without a real explanation</li>
+                    </ul>
+                </div>
             </div>
 
-            <div id="recommendation-form"></div>
+            <div class="recommendations-form">
+                <h3>What are you recommending?</h3>
+                <div class="recommendation-options">
+                    <button type="button" class="recommendation-option" onclick="loadForm('song', 0)">Song</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('media', 1)">Media</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('trigger', 2)">Trigger</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('other', 3)">Other</button>
+                </div>
+                <div id="recommendation-form"></div>
+            </div>
 
         </section>
 
@@ -162,7 +206,9 @@
 
         </section>
     </footer>
+    
     <script src="getRecommendation.js"></script>
+    
 </body>
 
 </html>

@@ -305,12 +305,93 @@ main ul {
 }
 
 /* recommendations page */
+.recommendations {
+    display: flex;
+    gap: 3rem;
+}
+
+.recommendations-info,
+.recommendations-form {
+    width: 50%;
+}
+
+.recommendations-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.recommendations-info-card {
+  background-color: var(--media-slider-background);
+  color: var(--text-primary);
+  border: 1px solid #9faf91;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.recommendations-info-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.recommendations-info-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.recommendations-info-card p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.recommendations-info-card ul,
+.recommendations-info-card ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.recommendations-info-card li {
+  margin-bottom: 0.45rem;
+  line-height: 1.35;
+}
+
+.recommendations-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recommendations-checklist li::before {
+  content: "✓ ";
+  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+.recommendations-example {
+  padding: 0.65rem;
+  border-radius: 7px;
+  margin-bottom: 0.75rem;
+}
+
+.recommendations-example.great {
+  background-color: #eef4e8;
+  border-left: 4px solid #3f6638;
+}
+
+.recommendations-example.good {
+  background-color: #efefe4;
+  border-left: 4px solid #a58b59;
+}
+
+.recommendations-example.weak {
+  background-color: #f1eee7;
+  border-left: 4px solid #a56259;
+}
+
 .recommendation-form fieldset {
     background-color: var(--accent-secondary);
     border: 1px solid var(--border);
     border-radius: 1rem;
     padding: 1.75rem 2rem;
-    width: fit-content;
 }
 
 .recommendation-options {
@@ -378,10 +459,8 @@ main ul {
 .recommendation-form textarea {
     display: block;
     width: 100%;
-    max-width: 600px;
     box-sizing: border-box;
     font-family: var(--font-body);
-    font-size: 95%;
     color: var(--text-primary);
     background-color: #f7f9f6;
     border: 1px solid var(--border);
@@ -393,6 +472,7 @@ main ul {
 .checkbox {
     display: flex;
     align-items: center;
+    gap: .5rem;
 }
 
 .checkbox label {
@@ -639,7 +719,20 @@ footer ul a:hover {
     }
 
     /* recommendation page */
-    
+    .recommendations {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .recommendations-info,
+    .recommendations-form {
+        width: 100%;
+    }
+
+    .recommendations-info-card {
+        font-size: 80%;
+    }
 
     /* footer */
     footer {
