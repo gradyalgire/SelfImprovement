@@ -1,6 +1,6 @@
 function loadForm(type, clickedButton) {
 
-    const container = document.getElementById('recommendation-form')
+    const container = document.getElementById('recommendation-form');
     const buttons = document.querySelectorAll(".recommendation-option");
 
     // remove active styling from current button
@@ -17,12 +17,12 @@ function loadForm(type, clickedButton) {
 
     const formReason = `
         <hr class="form-divider">
-        <div class="recommendation-form-group"></div>
+        <div class="recommendation-form-group">
             <label for="reason"><strong>Why should this be added?</strong></label>
             <p class="recommendation-form-note">Explain how this helped you and why it supports self-improvement, growth, or rebuilding.</p>
             <textarea id="reason" name="reason" rows="5" required placeholder="Please be specific. How did this help you? What mindset does it reinforce?"></textarea>
         </div>
-        <div class="recommendation-form-group"></div>
+        <div class="recommendation-form-group">
             <label for="context"><strong>What were you going through when you found this?</strong> <span class="field-optional">(optional)</span></label>
             <p class="recommendation-form-note">This helps reviewers understand the emotional context it addresses.</p>
             <textarea id="context" name="context" rows="3" placeholder="e.g. Going through a breakup, dealing with addiction, trying to stay motivated..."></textarea>
@@ -31,12 +31,12 @@ function loadForm(type, clickedButton) {
 
     const formSubmission = `
         <hr class="form-divider">
-        <div class="recommendation-form-group"></div>
+        <div class="recommendation-form-group">
             <label for="email"><strong>Your Email Address</strong></label>
             <p class="recommendation-form-note">Only used to follow up on your submission. Never shared.</p>
             <input type="email" id="email" name="email" required placeholder="you@example.com">
         </div>
-        <div class="recommendation-form-group"></div>
+        <div class="recommendation-form-group">
             <button type="submit" class="recommendation-form-submit">Submit Recommendation</button>
             <p class="recommendation-form-note">Submissions are reviewed manually and may not be added.</p>
         </div>
@@ -49,11 +49,11 @@ function loadForm(type, clickedButton) {
                     <fieldset>
                         <legend>Song Details</legend>
                         <div class="recommendation-form-group">
-                            <label for="title"><Strong>Title</Strong></label>
+                            <label for="title"><strong>Title</strong></label>
                             <input type="text" id="title" name="title" required placeholder="e.g. The Mountain Is You">
                         </div>
                         <div class="recommendation-form-group">
-                            <label for="artist"><Strong>Artist</Strong></label>
+                            <label for="artist"><strong>Artist</strong></label>
                             <input type="text" id="artist" name="artist" required placeholder="e.g. Chance Peña">
                         </div>
                         ${formTriggers}
@@ -84,7 +84,7 @@ function loadForm(type, clickedButton) {
                             </select>
                         </div>
                         <div class="recommendation-form-group">
-                            <label for="title"><Strong>Title</Strong></label>
+                            <label for="title"><strong>Title</strong></label>
                             <input type="text" id="title" name="title" required placeholder="e.g. Mindset Mentor">
                         </div>
                         <div class="recommendation-form-group">
@@ -92,7 +92,7 @@ function loadForm(type, clickedButton) {
                             <input type="text" id="artist-author-creator" name="artist-author-creator" required placeholder="e.g. Rob Dial">
                         </div>
                         <div class="recommendation-form-group">
-                            <label for="link"><Strong>Link</Strong> (Spotify, Goodreads, Youtube, Letterboxd, etc...)</label>
+                            <label for="link"><strong>Link</strong> (Spotify, Goodreads, Youtube, Letterboxd, etc...)</label>
                             <input type="text" id="link" name="link" placeholder="https://...">
                         </div>
                         ${formTriggers}

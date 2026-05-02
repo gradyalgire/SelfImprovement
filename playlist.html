@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script type="module" src="getPlaylist.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 
     <main>
         <section class="playlist">
-            <h1>Playlist</h1><br>
+            <h2>Playlist</h2>
             <p>Navigate to any song by clicking on the song/album cover.</p>
             <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0J2ZEWTzSlYikVtd5M0yNz?utm_source=generator&theme=1" width="100%" height="400" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <p class="note"><i>*Playlist subject to change as the project evolves. Songs are not in any particular order.</i></p>
@@ -35,123 +35,9 @@
         </section>
     </main>
 
-    <footer>
-        <section aria-label="Crisis and Mental Health Support">
-            <h3>Immediate Support & Crisis Resources</h3><br>
-            <section class="crisis-and-suicide-support">
-                <h4>Crisis & Suicide Support</h4>
-                <ul>
-                    <li>
-                        <a href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">
-                            988 Suicide & Crisis Lifeline (U.S.) — Call or text 988
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
-                            Samaritans (UK & ROI) — Call 116 123
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.veteranscrisisline.net" target="_blank" rel="noopener noreferrer">
-                            Veterans Crisis Line (U.S.) — Call 988 then press 1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">
-                            Find a Helpline — International crisis support
-                        </a>
-                    </li>
-                </ul>
-            </section>
+    <footer id="footer"></footer>
 
-            <br>
-
-            <section class="mental-health-support">
-                <h4>Mental Health Support</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.opencounseling.com" target="_blank" rel="noopener noreferrer">
-                            Open Counseling — Mental health resources by country
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.nami.org/help" target="_blank" rel="noopener noreferrer">
-                            NAMI — Education, support, and helplines (U.S.)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer">
-                            Mind — Mental health support (UK)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.thetrevorproject.org/get-help/" target="_blank" rel="noopener noreferrer">
-                            LGBTQ+ Youth Crisis Support (U.S.) — Call 1-866-488-7386 (24/7) OR Text START to 678678
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section class="addiction-and-substance-support">
-                <h4>Addiction & Substance Use</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank"
-                            rel="noopener noreferrer">
-                            SAMHSA Helpline (U.S.) — Call 1-800-662-HELP
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.aa.org" target="_blank" rel="noopener noreferrer">
-                            Alcoholics Anonymous
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.na.org" target="_blank" rel="noopener noreferrer">
-                            Narcotics Anonymous
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.nhs.uk/live-well/addiction-support" target="_blank"
-                            rel="noopener noreferrer">
-                            NHS Addiction Support (UK)
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section class="behavioral-and-compulsive-support">
-                <h4>Behavioral & Compulsive Issues</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.nofap.com" target="_blank" rel="noopener noreferrer">
-                            NoFap — Pornography addiction recovery
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.smartrecovery.org" target="_blank" rel="noopener noreferrer">
-                            SMART Recovery — Addiction & behavioral change
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.quit.org.au" target="_blank" rel="noopener noreferrer">
-                            Quit — Smoking and nicotine support
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <p><strong>If you are in immediate danger or thinking about harming yourself, contact local emergency services right now.</strong></p>
-
-        </section>
-    </footer>
-
+    <script src="getFooter.js"></script>
 </body>
 
 </html>

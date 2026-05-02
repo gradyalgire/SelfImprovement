@@ -20,7 +20,8 @@
 }
 
 body {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: var(--background);
     font-family: var(--font-body);
 }
@@ -74,14 +75,9 @@ header nav a.active {
 
 /* main styling */
 main {
-    flex: 1;
-    padding: 3rem 2.5rem;
-    line-height: 1.3rem;
+    padding: 2rem 2.5rem;
+    line-height: 1.3;
     color: var(--text-primary);
-}
-
-main h1 {
-    font-size: 250%;
 }
 
 main h2 {
@@ -728,6 +724,10 @@ footer ul a:hover {
     .recommendations-info,
     .recommendations-form {
         width: 100%;
+    }
+
+    .recommendations-info {
+        gap: 1rem;
     }
 
     .recommendations-info-card {
