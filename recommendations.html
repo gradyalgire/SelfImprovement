@@ -84,7 +84,7 @@
                     <button type="button" class="recommendation-option" onclick="loadForm('other', 3)">Other</button>
                 </div>
                 <!-- hidden form for netlify form detection -->
-                <form name="recommendation-form" data-netlify="true">
+                <form name="recommendation-form" method="POST" data-netlify="true" hidden>
                     <input type="text" name="title">
                     <input type="text" name="artist">
                     <input type="text" name="triggers">
@@ -99,7 +99,7 @@
                     <input type="email" name="email">
                 </form>
                 <!-- actual form users will see -->
-                <form id="recommendation-form" name="recommendation-form" class="recommendation-form" data-netlify="true"></form>
+                <form id="recommendation-form" name="recommendation-form" method="POST" class="recommendation-form" data-netlify="true"></form>
             </div>
 
         </section>

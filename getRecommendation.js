@@ -30,6 +30,8 @@ function loadForm(type, clickedButton) {
     `;
 
     const formSubmission = `
+        <input type="hidden" name="form-name" value="recommendation-form">
+        
         <hr class="form-divider">
         <div class="recommendation-form-group">
             <label for="email"><strong>Your Email Address</strong></label>
