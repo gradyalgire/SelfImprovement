@@ -135,4 +135,18 @@ function loadForm(type, clickedButton) {
     buttons[clickedButton].classList.add("active");
 }
 
-loadForm("song", 0);
+const params = new URLSearchParams(window.location.search);
+const type = params.get('type') || 'song';
+const typeIndex = { song: 0, media: 1, trigger: 2, other: 3 };
+
+loadForm(type, typeIndex[type] ?? 0);
+
+// Pre-fill the target title field if title/artist were passed
+if (type === 'trigger') {
+    const title = params.get('title');
+    const artist = params.get('artist');
+    const field = document.getElementById('target-title');
+    if (field && title) {
+        field.value = artist ? `${title} - ${artist}` : title;
+    }
+}
