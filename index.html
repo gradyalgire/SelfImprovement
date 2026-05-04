@@ -45,6 +45,64 @@
                     </div>
                 </div>
                 <div class="vinyl">
+                    <svg class="vinyl-word" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+
+                            <!--
+                            VINYL RECORD TEXT RINGS
+                            ========================
+                            This SVG sits inside .vinyl and spins with it automatically.
+
+                            HOW TO ADJUST RINGS:
+                            - The viewBox is "0 0 500 500", so the center is always 250,250
+                            - Each ring is defined by its radius (e.g. 185 for outer, 130 for inner)
+                            - To move a ring outward: increase the radius (max ~240 before hitting the edge)
+                            - To move a ring inward: decrease the radius (min ~100 before hitting the label)
+                            - To add a new ring: copy a <defs> path and <text> block, give it a new id, and set a new radius
+
+                            HOW TO ADJUST TEXT:
+                            - Edit the text content inside <textPath> to change words
+                            - Use · as a separator between words so the loop looks intentional
+                            - startOffset shifts where the text starts on the circle (0% = left edge, 25% = bottom, 50% = right edge)
+                            - font-size, letter-spacing, and fill are controlled in style.css under .vinyl-text text
+
+                            HOW THE PATH WORKS:
+                            - "M 250,250" moves to center
+                            - "m -RADIUS,0" shifts left to the starting point of the circle
+                            - "a RADIUS,RADIUS 0 1,1 DIAMETER,0" draws the top half arc (DIAMETER = RADIUS * 2)
+                            - "a RADIUS,RADIUS 0 1,1 -DIAMETER,0" draws the bottom half arc back
+                            - Two arcs are used because SVG cannot draw a full 360° circle in one arc command
+                            -->
+
+                            <!-- inner ring -->
+                            <path id="ring-inner" d="M 250,250 m -94,0 a 94,94 0 1,1 190,0 a 94,94 0 1,1 -190,0"/>
+                            <!-- middle ring 2 -->
+                            <path id="ring-middle" d="M 250,250 m -147,0 a 147,147 0 1,1 294,0 a 147,147 0 1,1 -294,0"/>
+                            <!-- outer ring 3 -->
+                            <path id="ring-outer" d="M 250,250 m -200,0 a 200,200 0 1,1 400,0 a 200,200 0 1,1 -400,0"/>
+                        </defs>
+
+                        <!-- inner ring text -->
+                        <text>
+                            <textPath href="#ring-inner" startOffset="0%">
+                                TRANSFORMATION · PEACE · HABIT · EXCELLENCE · WISDOM · HEALING · SELF-WORTH · 
+                            </textPath>
+                        </text>
+
+                        <!-- middle ring text -->
+                        <text>
+                            <textPath href="#ring-middle" startOffset="0%">
+                                ADAPTABILITY · PROGRESS · COMMITMENT · CLARITY · REFLECTION · PERSISTENCE · GRATITUDE · BALANCE · AMBITIONS · STRENGTH · 
+                            </textPath>
+                        </text>
+
+                        <!-- outer ring text -->
+                        <text>
+                            <textPath href="#ring-outer" startOffset="0%">
+                                ACTION · MINDSET · CONFIDENT · ACCOUNTABILITY · INTEGRITY · PATIENCE · COURAGE · PURPOSE · FOCUS · RESILIENCE · CONSISTENCY · GROWTH · DISCIPLINE · SELF-IMPROVEMENT ·
+                            </textPath>
+                        </text>
+                    </svg>
                     <span class="vinyl-center">
                         <p class="vinyl-title">SELF</p>
                         <span class="vinyl-dot"></span>
