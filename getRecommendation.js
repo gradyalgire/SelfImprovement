@@ -79,7 +79,6 @@ function loadForm(type, clickedButton) {
                             <option value="book">Book</option>
                             <option value="video">Video</option>
                             <option value="movie">Movie</option>
-                            <option value="quote">Quote</option>
                         </select>
                     </div>
                     <div class="recommendation-form-group">
