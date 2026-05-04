@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,188 +26,161 @@
 
     <main>
 
-        <section class="hero">
-            <h1>Music curated to support growth, not escapism.</h1><br>
-            <p>This site exists to help you use music and media intentionally to stay grounded, rebuild yourself, and move forward without feeding false hope or avoidance.</p>
-        </section>
+        <section class="home">
+            <div class="home-hero">
+                <div class="home-hero-text">
+                    <p class="home-eyebrow">
+                        SELF - GROWTH
+                    </p>
+                    <h2 class="home-title">
+                        Music that helps you<br>
+                        <em>move forward.</em>
+                    </h2>
+                    <p class="home-description">
+                        A curated collection of songs and media for people doing the hard work of rebuilding themselves honestly without shortcuts.
+                    </p>
+                    <div class="home-links">
+                        <a href="playlist.html" class="home-playlist">EXPLORE THE PLAYLIST</a>
+                        <a href="media.html" class="home-media">BROWSE MEDIA</a>
+                    </div>
+                </div>
+                <div class="vinyl">
+                    <svg class="vinyl-word" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
 
-        <br><br>
+                            <!--
+                            VINYL RECORD TEXT RINGS
+                            ========================
+                            This SVG sits inside .vinyl and spins with it automatically.
 
-        <section class="what-this-is">
-            <h2>What This Is</h2><br>
-            <p>This is a curated collection of music and media chosen for one purpose: supporting self-improvement during difficult periods of life.</p>
-            <p>Everything here is selected and reviewed manually. Nothing is added automatically. Each song or resource is included because it encourages responsibility, stability, persistence, and forward motion.</p>
-            <p>You do not need to connect with every song. Choose the ones that resonate with you and stick with them. If you find a song that supports your growth and isn't on this playlist, submit a new song request on the recommendations page for consideration.</p>
-        </section>
+                            HOW TO ADJUST RINGS:
+                            - The viewBox is "0 0 500 500", so the center is always 250,250
+                            - Each ring is defined by its radius (e.g. 185 for outer, 130 for inner)
+                            - To move a ring outward: increase the radius (max ~240 before hitting the edge)
+                            - To move a ring inward: decrease the radius (min ~100 before hitting the label)
+                            - To add a new ring: copy a <defs> path and <text> block, give it a new id, and set a new radius
 
-        <br><br>
+                            HOW TO ADJUST TEXT:
+                            - Edit the text content inside <textPath> to change words
+                            - Use · as a separator between words so the loop looks intentional
+                            - startOffset shifts where the text starts on the circle (0% = left edge, 25% = bottom, 50% = right edge)
+                            - font-size, letter-spacing, and fill are controlled in style.css under .vinyl-text text
 
-        <section class="why-this-exists">
-            <h2>Why This Exists</h2><br>
-            <p>Music has a direct influence on thought and emotion. When used carelessly, it can reinforce fixation, fantasy, or avoidance - especially during emotional stress.</p>
-            <p>This project exists to make it easier to choose music that helps you accept reality, regulate emotion, and rebuild yourself instead of staying mentally stuck.</p>
-        </section>
+                            HOW THE PATH WORKS:
+                            - "M 250,250" moves to center
+                            - "m -RADIUS,0" shifts left to the starting point of the circle
+                            - "a RADIUS,RADIUS 0 1,1 DIAMETER,0" draws the top half arc (DIAMETER = RADIUS * 2)
+                            - "a RADIUS,RADIUS 0 1,1 -DIAMETER,0" draws the bottom half arc back
+                            - Two arcs are used because SVG cannot draw a full 360° circle in one arc command
+                            -->
 
-        <br><br>
+                            <!-- inner ring -->
+                            <path id="ring-inner" d="M 250,250 m -94,0 a 94,94 0 1,1 190,0 a 94,94 0 1,1 -190,0"/>
+                            <!-- middle ring 2 -->
+                            <path id="ring-middle" d="M 250,250 m -147,0 a 147,147 0 1,1 294,0 a 147,147 0 1,1 -294,0"/>
+                            <!-- outer ring 3 -->
+                            <path id="ring-outer" d="M 250,250 m -200,0 a 200,200 0 1,1 400,0 a 200,200 0 1,1 -400,0"/>
+                        </defs>
 
-        <section class="how-to-use-this">
-            <h2>How To Use This</h2><br>
-            <ul>
-                <li>Listen with awareness, not on autopilot</li>
-                <li>Use the media section as a resource, not a checklist</li>
-                <li>Take what helps and ignore what doesn't</li>
-            </ul>
-        </section>
+                        <!-- inner ring text -->
+                        <text>
+                            <textPath href="#ring-inner" startOffset="0%">
+                                TRANSFORMATION · PEACE · HABIT · EXCELLENCE · WISDOM · HEALING · SELF-WORTH · 
+                            </textPath>
+                        </text>
 
-        <br><br>
+                        <!-- middle ring text -->
+                        <text>
+                            <textPath href="#ring-middle" startOffset="0%">
+                                ADAPTABILITY · PROGRESS · COMMITMENT · CLARITY · REFLECTION · PERSISTENCE · GRATITUDE · BALANCE · AMBITIONS · STRENGTH · 
+                            </textPath>
+                        </text>
 
-        <section class="target-audience">
-            <h2>Who This Is - And Isn't - For</h2><br>
+                        <!-- outer ring text -->
+                        <text>
+                            <textPath href="#ring-outer" startOffset="0%">
+                                ACTION · MINDSET · CONFIDENT · ACCOUNTABILITY · INTEGRITY · PATIENCE · COURAGE · PURPOSE · FOCUS · RESILIENCE · CONSISTENCY · GROWTH · DISCIPLINE · SELF-IMPROVEMENT ·
+                            </textPath>
+                        </text>
+                    </svg>
+                    <span class="vinyl-center">
+                        <p class="vinyl-title">SELF</p>
+                        <span class="vinyl-dot"></span>
+                        <p class="vinyl-description">THROUGH MUSIC</p>
+                    </span>
+                </div>
+            </div>
 
-            <p><strong>This site is for people who:</strong></p>
-            <ul>
-                <li>Want to improve themselves honestly</li>
-                <li>Use music as a tool, not an escape</li>
-                <li>Are rebuilding focus, identity, or discipline</li>
-            </ul>
+            <div class="home-explanation">
+                <div class="home-what">
+                    <p>WHAT THIS IS</p>
+                    <h2>Music chosen with intention, not an algorithm.</h2>
+                    <p>A curated collection selected for one purpose: supporting self-improvement during difficult periods of life. Every song is reviewed manually. Nothing is added automatically.</p>
+                    <p>Each track is here because it encourages responsibility, stability, persistence, and forward motion - not escapism.</p>
+                    <p>You don't need to connect with everything. Choose what resonates with you and let it work.</p>
+                </div>
+                <div class="home-why">
+                    <p>WHY THIS EXISTS</p>
+                    <h2>Music can shape your mind. Use it deliberately.</h2>
+                    <p>Music has a direct influence on thought and emotion. When used carelessly, it reinforces fixation, fantasy, or avoidance - especially during emotional stress.</p>
+                    <p>This project exists to make it easier to choose music that helps you accept reality, regulate emotion, and rebuild yourself instead of staying mentally stuck.</p>
+                </div>
+            </div>
 
-            <br>
+            <div class="home-quote">
+                <blockquote>The goal isn't to feel better. It's to become better - and eventually, feeling better follows.</blockquote>
+            </div>
 
-            <p><strong>This site is not for people who:</strong></p>
-            <ul>
-                <li>Want reassurance about what they can't control</li>
-                <li>Want to numb emotions or avoid reality</li>
-                <li>Are looking for motivation without effort</li>
-            </ul>
-        </section>
+            <div class="home-audience">
+                <div class="home-for">
+                    <p class="good">THIS IS FOR YOU IF</p>
+                    <h2>You're ready to do the work.</h2>
+                    <ul>
+                        <li>✓ You want honest self-improvement, not reassurance</li>
+                        <li>✓ You use music as a tool, not a crutch</li>
+                        <li>✓ You're rebuilding focus, identity, or discipline</li>
+                    </ul>
+                </div>
+                <div class="home-not">
+                    <p class="bad">THIS IS <strong>NOT</strong> FOR YOU IF</p>
+                    <h2>You're looking for an easy out.</h2>
+                    <ul>
+                        <li>✕ You want reassurance about things you can't control</li>
+                        <li>✕ You want to numb emotions, not process them</li>
+                        <li>✕ You want motivation without putting in effort</li>
+                    </ul>
+                </div>
+            </div>
 
-        <br><br>
+            <div class="home-purpose">
+                <p>HOW TO USE THIS</p>
+                <h2>Three principles to get the most of out this project.</h2>
+                <div class="home-principles">
+                    <div class="home-principle1">
+                        <h3>Listen with awareness</h3>
+                        <p>Don't put it on in the background. Pay attention to what a song makes you think and feel. Choose the ones that move you forward, not into a loop.</p>
+                    </div>
+                    <div class="home-principle2">
+                        <h3>Use media as a resource</h3>
+                        <p>The books, podcasts, and videos aren't a checklist to complete. They're tools. Pick what applies to where you are right now.</p>
+                    </div>
+                    <div class="home-principle3">
+                        <h3>Take waht helps</h3>
+                        <p>Ignore what doesn't apply. Not every song will resonate. That's intentional. You're building something personal, not following a script.</p>
+                    </div>
+                </div>
+            </div>
 
-        <section class="important-note">
-            <h2>Important Note</h2><br>
-            <p>This project is <strong>not</strong> therapy and it is <strong>not</strong> a replacement for professional help. It is a personal, experience-based resource created to support intentional growth.</p>
-            <p>If you are in crisis or need immediate help, support resources are listed below.</p>
+            <div class="home-note">
+                <p>⚠ This project is <strong>not</strong> therapy and it is <strong>not</strong> a replacement for professional help. It is a personal, experience-based resource created to support intentional growth. If you are in crisis or need immediate help, support resources are listed below.</p>
+            </div>
         </section>
 
     </main>
 
-    <footer>
-        <section aria-label="Crisis and Mental Health Support">
-            <h3>Immediate Support & Crisis Resources</h3><br>
-            <section class="crisis-and-suicide-support">
-                <h4>Crisis & Suicide Support</h4>
-                <ul>
-                    <li>
-                        <a href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">
-                            988 Suicide & Crisis Lifeline (U.S.) — Call or text 988
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
-                            Samaritans (UK & ROI) — Call 116 123
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.veteranscrisisline.net" target="_blank" rel="noopener noreferrer">
-                            Veterans Crisis Line (U.S.) — Call 988 then press 1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">
-                            Find a Helpline — International crisis support
-                        </a>
-                    </li>
-                </ul>
-            </section>
+    <footer id="footer"></footer>
 
-            <br>
-
-            <section class="mental-health-support">
-                <h4>Mental Health Support</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.opencounseling.com" target="_blank" rel="noopener noreferrer">
-                            Open Counseling — Mental health resources by country
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.nami.org/help" target="_blank" rel="noopener noreferrer">
-                            NAMI — Education, support, and helplines (U.S.)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer">
-                            Mind — Mental health support (UK)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.thetrevorproject.org/get-help/" target="_blank" rel="noopener noreferrer">
-                            LGBTQ+ Youth Crisis Support (U.S.) — Call 1-866-488-7386 (24/7) OR Text START to 678678
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section class="addiction-and-substance-support">
-                <h4>Addiction & Substance Use</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank"
-                            rel="noopener noreferrer">
-                            SAMHSA Helpline (U.S.) — Call 1-800-662-HELP
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.aa.org" target="_blank" rel="noopener noreferrer">
-                            Alcoholics Anonymous
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.na.org" target="_blank" rel="noopener noreferrer">
-                            Narcotics Anonymous
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.nhs.uk/live-well/addiction-support" target="_blank"
-                            rel="noopener noreferrer">
-                            NHS Addiction Support (UK)
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section class="behavioral-and-compulsive-support">
-                <h4>Behavioral & Compulsive Issues</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.nofap.com" target="_blank" rel="noopener noreferrer">
-                            NoFap — Pornography addiction recovery
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.smartrecovery.org" target="_blank" rel="noopener noreferrer">
-                            SMART Recovery — Addiction & behavioral change
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.quit.org.au" target="_blank" rel="noopener noreferrer">
-                            Quit — Smoking and nicotine support
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <p><strong>If you are in immediate danger or thinking about harming yourself, contact local emergency services right now.</strong></p>
-
-        </section>
-    </footer>
-
+    <script src="getFooter.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -25,175 +25,91 @@
 
     <main>
 
-        <section class="recommendation-form">
+        <section class="recommendations">
 
-            <h1>Recommendations</h1><br>
+            <div class="recommendations-info">
 
-            <p>This page exists so you can suggest additions that may help others move forward.</p>
+                <div class="recommendations-hero">
+                    <h2 class="page-title">Recommendations</h2>
+                    <p>This page exists so you can suggest additions that may help others move forward.</p>
+                    <p>All recommendations are reviewed carefully. Songs are analyzed for emotional impact, lyrical themes, and whether they support growth rather than escapism. Media submissions are evaluated for long-term value, mindset alignment, and practical usefulness.</p>
+                    <p>Not every request will be added. This is intentional.</p>
+                </div>
 
-            <p>All recommendations are reviewed carefully. Songs are analyzed for emotional impact, lyrical themes, and whether they support growth rather than escapism. Media submissions are evaluated for long-term value, mindset alignment, and practical usefulness.</p>
+                <div class="recommendations-info-card">
+                    <h2>What makes a good recommendation?</h2>
+                    <ul class="recommendations-checklist">
+                        <li>Encourages growth, discipline, healing, or rebuilding</li>
+                        <li>Has long-term value, not just emotional escape</li>
+                        <li>Handles pain honestly without glorifying it</li>
+                        <li>Gives people something useful to carry forward</li>
+                    </ul>
+                </div>
 
-            <p>Not every request will be added. This is intentional.</p><br><br>
+                <div class="recommendations-info-card">
+                    <h2>Submission examples:</h2>
+                    <div class="recommendations-example great">
+                        <h3>Great reason</h3>
+                        <p>“This gave me a clear way to think about rebuilding myself instead of
+                        staying stuck in regret. It helped me focus on discipline, self-respect,
+                        and becoming better through the pain rather than being controlled by it.”</p>
+                    </div>
+                    <div class="recommendations-example good">
+                        <h3>Good reason</h3>
+                        <p>“This helped me stop seeing failure as final and start treating it as part of rebuilding.”</p>
+                    </div>
+                    <div class="recommendations-example weak">
+                        <h3>Weak reason</h3>
+                        <p>“I like this song.”</p>
+                    </div>
+                </div>
 
-            <h2>Submit a Recommendation</h2><br>
+                <div class="recommendations-info-card">
+                    <h2>What may not be added?</h2>
+                    <ul>
+                        <li>Songs with no growth angle</li>
+                        <li>Content that supports self-destruction</li>
+                        <li>Media with no clear rebuilding value</li>
+                        <li>Submissions without a real explanation</li>
+                    </ul>
+                </div>
+            </div>
 
-            <form name="recommendations" netlify>
-
-                <fieldset>
-
-                    <label for="type"><strong>What are you recommending?</strong></label><br>
-                    <select id="type" name="type" required>
-                        <option value="">-- Select an option --</option>
-                        <option value="song">Song (Playlist)</option>
-                        <option value="media">Media (Podcast, Book, Video, Movie, Quote)</option>
-                        <option value="trigger">Trigger</option>
-                        <option value="other">Other</option>
-                    </select><br><br>
-
-                    <label for="title"><strong>Title / Name</strong></label><br>
-                    <input type="text" id="title" name="title" required><br><br>
-
-                    <label for="creator"><strong>Artist / Author / Creator (if applicable)</strong></label><br>
-                    <input type="text" id="creator" name="creator"><br><br>
-
-                    <label for="email"><strong>Your Email Address</strong></label><br>
-                    <input type="email" id="email" name="email" required><br><br>
-
-                    <label for="reason"><strong>Why should this be added?</strong></label><br>
-                    <p>Explain how this helped you and why it supports self-improvement, growth, or rebuilding.</p>
-                    <textarea id="reason" name="reason" rows="6" required></textarea><br><br>
-
-                    <button type="submit">Submit Recommendation</button>
-
-                </fieldset>
-
-            </form>
-
-            <br><br>
-
-            <p><i>*Song submissions are reviewed line by line. Media submissions are reviewed for emotional impact, clarity, and long-term usefulness. If a recommendation reinforces avoidance, fixation, false reassurance, it will not be added.</i></p>
+            <div class="recommendations-form">
+                <h3>What are you recommending?</h3>
+                <div class="recommendation-options">
+                    <button type="button" class="recommendation-option" onclick="loadForm('song', 0)">Song</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('media', 1)">Media</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('trigger', 2)">Trigger</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('other', 3)">Other</button>
+                </div>
+                <!-- hidden form for netlify form detection -->
+                <form name="recommendation-form" method="POST" data-netlify="true" hidden>
+                    <input type="text" name="title">
+                    <input type="text" name="artist">
+                    <input type="text" name="triggers">
+                    <input type="checkbox" name="explicit">
+                    <input type="text" name="artist-author-creator">
+                    <input type="url" name="link">
+                    <select name="type"></select>
+                    <input type="text" name="target_title">
+                    <textarea name="suggestion"></textarea>
+                    <textarea name="reason"></textarea>
+                    <textarea name="context"></textarea>
+                    <input type="email" name="email">
+                </form>
+                <!-- actual form users will see -->
+                <form id="recommendation-form" name="recommendation-form" method="POST" class="recommendation-form" data-netlify="true"></form>
+            </div>
 
         </section>
 
     </main>
 
-    <footer>
-        <section aria-label="Crisis and Mental Health Support">
-            <h3>Immediate Support & Crisis Resources</h3><br>
-            <section class="crisis-and-suicide-support">
-                <h4>Crisis & Suicide Support</h4>
-                <ul>
-                    <li>
-                        <a href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">
-                            988 Suicide & Crisis Lifeline (U.S.) — Call or text 988
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.samaritans.org" target="_blank" rel="noopener noreferrer">
-                            Samaritans (UK & ROI) — Call 116 123
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.veteranscrisisline.net" target="_blank" rel="noopener noreferrer">
-                            Veterans Crisis Line (U.S.) — Call 988 then press 1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer">
-                            Find a Helpline — International crisis support
-                        </a>
-                    </li>
-                </ul>
-            </section>
+    <footer id="footer"></footer>
 
-            <br>
-
-            <section class="mental-health-support">
-                <h4>Mental Health Support</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.opencounseling.com" target="_blank" rel="noopener noreferrer">
-                            Open Counseling — Mental health resources by country
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.nami.org/help" target="_blank" rel="noopener noreferrer">
-                            NAMI — Education, support, and helplines (U.S.)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mind.org.uk" target="_blank" rel="noopener noreferrer">
-                            Mind — Mental health support (UK)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.thetrevorproject.org/get-help/" target="_blank" rel="noopener noreferrer">
-                            LGBTQ+ Youth Crisis Support (U.S.) — Call 1-866-488-7386 (24/7) OR Text START to 678678
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section class="addiction-and-substance-support">
-                <h4>Addiction & Substance Use</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank"
-                            rel="noopener noreferrer">
-                            SAMHSA Helpline (U.S.) — Call 1-800-662-HELP
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.aa.org" target="_blank" rel="noopener noreferrer">
-                            Alcoholics Anonymous
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.na.org" target="_blank" rel="noopener noreferrer">
-                            Narcotics Anonymous
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.nhs.uk/live-well/addiction-support" target="_blank"
-                            rel="noopener noreferrer">
-                            NHS Addiction Support (UK)
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <section class="behavioral-and-compulsive-support">
-                <h4>Behavioral & Compulsive Issues</h4>
-                <ul>
-                    <li>
-                        <a href="https://www.nofap.com" target="_blank" rel="noopener noreferrer">
-                            NoFap — Pornography addiction recovery
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.smartrecovery.org" target="_blank" rel="noopener noreferrer">
-                            SMART Recovery — Addiction & behavioral change
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.quit.org.au" target="_blank" rel="noopener noreferrer">
-                            Quit — Smoking and nicotine support
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <br>
-
-            <p><strong>If you are in immediate danger or thinking about harming yourself, contact local emergency services right now.</strong></p>
-
-        </section>
-    </footer>
-
+    <script src="getFooter.js"></script>
+    <script src="getRecommendation.js"></script>
 </body>
 
 </html>
