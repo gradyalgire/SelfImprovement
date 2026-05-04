@@ -2,7 +2,7 @@ const container = document.getElementById('footer');
 
 container.innerHTML = `
     <section aria-label="Crisis and Mental Health Support">
-        <h3>Immediate Support & Crisis Resources</h3>
+        <h2>Immediate Support & Crisis Resources</h2>
         <section class="crisis-and-suicide-support">
             <h4>Crisis & Suicide Support</h4>
             <ul>
