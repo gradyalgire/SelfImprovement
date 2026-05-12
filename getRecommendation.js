@@ -86,8 +86,8 @@ function loadForm(type, clickedButton) {
                         <input type="text" id="title" name="title" required placeholder="e.g. Mindset Mentor">
                     </div>
                     <div class="recommendation-form-group">
-                        <label for="artist-author-creator"><strong>Artist / Author / Creator</strong></label>
-                        <input type="text" id="artist-author-creator" name="artist-author-creator" required placeholder="e.g. Rob Dial">
+                        <label for="creator"><strong>Artist / Author / Creator</strong></label>
+                        <input type="text" id="creator" name="creator" required placeholder="e.g. Rob Dial">
                     </div>
                     <div class="recommendation-form-group">
                         <label for="link"><strong>Link</strong> (Spotify, Goodreads, Youtube, Letterboxd, etc...)</label>
