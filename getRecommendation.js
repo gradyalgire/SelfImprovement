@@ -86,8 +86,8 @@ function loadForm(type, clickedButton) {
                         <input type="text" id="title" name="title" required placeholder="e.g. Mindset Mentor">
                     </div>
                     <div class="recommendation-form-group">
-                        <label for="artist-author-creator"><strong>Artist / Author / Creator</strong></label>
-                        <input type="text" id="artist-author-creator" name="artist-author-creator" required placeholder="e.g. Rob Dial">
+                        <label for="creator"><strong>Artist / Author / Creator</strong></label>
+                        <input type="text" id="creator" name="creator" required placeholder="e.g. Rob Dial">
                     </div>
                     <div class="recommendation-form-group">
                         <label for="link"><strong>Link</strong> (Spotify, Goodreads, Youtube, Letterboxd, etc...)</label>
@@ -107,7 +107,17 @@ function loadForm(type, clickedButton) {
                         <label for="target-title"><strong>Which song or media item is this trigger for?</strong></label>
                         <input type="text" id="target-title" name="target_title" placeholder="e.g. The Mountain Is You - Chance Peña">
                     </div>
-                    ${formReason}
+                    <hr class="form-divider">
+                    <div class="recommendation-form-group">
+                        <label for="reason"><strong>Why should this be added?</strong></label>
+                        <p class="recommendation-form-note">Explain why or how this triggered you and why it should be listed for others to see.</p>
+                        <textarea id="reason" name="reason" rows="5" required placeholder="Please be specific. How did this trigger you? What did you feel?"></textarea>
+                    </div>
+                    <div class="recommendation-form-group">
+                        <label for="context"><strong>What were you going through when you found this?</strong> <span class="field-optional">(optional)</span></label>
+                        <p class="recommendation-form-note">This helps reviewers understand the emotional context it addresses.</p>
+                        <textarea id="context" name="context" rows="3" placeholder="e.g. Going through a breakup, dealing with addiction, trying to stay motivated..."></textarea>
+                    </div>
                     ${formSubmission}
                 </fieldset>
             `;
