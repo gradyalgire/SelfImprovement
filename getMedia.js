@@ -31,7 +31,7 @@ function generateMediaSliderCard(mediatype, media) {
                         <h4 class="media-host">${sanitize(m.creator)}</h4>
                     </div>
                     <p class="media-description">${sanitize(m.description)}</p>
-                    <a href="recommendations.html" class="media-triggers-suggest">Suggest Triggers</a>
+                    ${m.triggers?.length ? `<p class="media-triggers"><strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}</p>` : `<a href="recommendations.html?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
                 </div>
             </div>
         </li>
@@ -51,7 +51,7 @@ function generateMediaSliderVideo(mediatype, media) {
                         <h4 class="media-creator">${sanitize(m.creator)}</h4>
                     </div>
                     <p class="media-description">${sanitize(m.description)}</p>
-                    <a href="recommendations.html" class="media-triggers-suggest">Suggest Triggers</a>
+                    ${m.triggers?.length ? `<p class="media-triggers"><strong>Triggers:</strong> ${sanitize(m.triggers.join(', '))}</p>` : `<a href="recommendations.html?type=trigger&title=${encodeURIComponent(m.title)}&artist=${encodeURIComponent(m.creator)}" class="media-triggers-suggest">Suggest Triggers</a>`}
                 </div>
             </div>
         </li>
