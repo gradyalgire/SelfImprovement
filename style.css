@@ -401,6 +401,35 @@ main ul {
 }
 
 /* playlist page */
+.playlist-search-and-filters {
+    display: flex;
+    height: 2rem;
+    font-size: 150%;
+    padding: .5rem;
+    gap: 1rem;
+}
+
+.playlist-search-and-filters input {
+    font-family: var(--font-body);
+    padding-left: .5rem;
+    width: 50%;
+}
+
+.playlist-filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.playlist-filters button {
+    height: 2rem;
+}
+
+.playlist-filter {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 .song {
     display: flex;
     gap: 1rem;
