@@ -35,14 +35,7 @@ else {
     const container = document.getElementById('playlist')
 
     container.innerHTML = songs.map(s => `
-        <div class="song"
-            style="background-color: ${sanitize(s.background_color)};"
-            data-title="${sanitize(s.title).toLowerCase()}"
-            data-artist="${sanitize(s.artist).toLowerCase()}"
-            data-order="${sanitize(String(s.sort_order))}"
-            data-description="${sanitize(s.description).toLowerCase()}"
-            data-category="${sanitize(s.category ?? '').toLowerCase()}"
-            data-genre="${sanitize(s.genre ?? '').toLowerCase()}">
+        <div class="song" style="background-color: ${sanitize(s.background_color)};">
             <a href="${safeUrl(s.spotify_link)}" target="_blank">
                 <img src="images/songs/song${sanitize(s.sort_order)}.png" alt="${sanitize(s.title)} - ${sanitize(s.artist)}">
             </a>
@@ -57,109 +50,4 @@ else {
             </div>
         </div>
     `).join('')
-
-    initSearchAndFilters()
-}
-
-function initSearchAndFilters() {
-    const searchInput   = document.querySelector('.playlist-search')
-    const filterBtns    = document.querySelectorAll('.playlist-filter-btn')
-    const clearBtn      = document.querySelector('.playlist-filter-clear')
-    const resultsCount  = document.getElementById('playlist-results-count')
-    const noResults     = document.getElementById('playlist-no-results')
-    const allSongs      = document.querySelectorAll('#playlist .song')
-    const totalCount    = allSongs.length
-
-    // track active filters
-    const activeFilters = { category: new Set(), genre: new Set() }
-
-    function applyFilters() {
-        const query = searchInput.value.trim().toLowerCase()
-        const hasCategory = activeFilters.category.size > 0
-        const hasGenre    = activeFilters.genre.size > 0
-        const hasSearch   = query.length > 0
-        const anyActive   = hasCategory || hasGenre || hasSearch
-
-        let visibleCount = 0
-
-        allSongs.forEach(song => {
-            // search match
-            const searchMatch = !hasSearch || (
-                song.dataset.title.includes(query) ||
-                song.dataset.artist.includes(query) ||
-                song.dataset.order.includes(query) ||
-                song.dataset.description.includes(query)
-            )
-
-            // category/genre stored as comma-separated strings from db
-            const songCategories = song.dataset.category
-                ? song.dataset.category.split(',').map(c => c.trim())
-                : []
-            const categoryMatch = !hasCategory ||
-                [...activeFilters.category].some(f => songCategories.includes(f.toLowerCase()))
-
-            // genre match
-            const songGenres = song.dataset.genre
-                ? song.dataset.genre.split(',').map(g => g.trim())
-                : []
-            const genreMatch = !hasGenre ||
-                [...activeFilters.genre].some(f => songGenres.includes(f.toLowerCase()))
-
-            const visible = searchMatch && categoryMatch && genreMatch
-
-            song.style.display = visible ? '' : 'none'
-            if (visible) visibleCount++
-        })
-
-        // results count
-        if (anyActive) {
-            resultsCount.textContent = `Showing ${visibleCount} of ${totalCount} songs`
-            resultsCount.removeAttribute('hidden')
-        } else {
-            resultsCount.setAttribute('hidden', '')
-        }
-
-        // no results message
-        if (visibleCount === 0) {
-            noResults.classList.add('visible')
-        } else {
-            noResults.classList.remove('visible')
-        }
-
-        // clear button visibility
-        if (hasCategory || hasGenre) {
-            clearBtn.removeAttribute('hidden')
-        } else {
-            clearBtn.setAttribute('hidden', '')
-        }
-    }
-
-    // search input
-    searchInput.addEventListener('input', applyFilters)
-
-    // filter buttons
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const type  = btn.dataset.filterType   // category or genre
-            const value = btn.dataset.filterValue
-
-            if (activeFilters[type].has(value)) {
-                activeFilters[type].delete(value)
-                btn.classList.remove('active')
-            } else {
-                activeFilters[type].add(value)
-                btn.classList.add('active')
-            }
-
-            applyFilters()
-        })
-    })
-
-    // clear all filters
-    clearBtn.addEventListener('click', () => {
-        activeFilters.category.clear()
-        activeFilters.genre.clear()
-        filterBtns.forEach(btn => btn.classList.remove('active'))
-        applyFilters()
-    })
 }
