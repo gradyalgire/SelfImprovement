@@ -22,6 +22,7 @@ const supabase = createClient(
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1xamV1aHZsdHVrd2lkcndlY3J0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc5MTg3OTQsImV4cCI6MjA4MzQ5NDc5NH0.CNZpiDxh9HPL0LoDg89ovAa9xHdxp_XbhG7mxafqWn4'
 )
 
+let sortOrder = 1;
 const { data: songs, error } = await supabase
     .from('song')
     .select('*')
@@ -41,7 +42,7 @@ else {
             </a>
             <div class="song-content">
                 <div class="song-title-artist">
-                    <h2 class="song-title">${sanitize(s.sort_order)}. ${sanitize(s.title)}${s.explicit ? ' <span class="explicit-tag">E</span>' : ''}</h2>
+                    <h2 class="song-title">${sortOrder++}. ${sanitize(s.title)}${s.explicit ? ' <span class="explicit-tag">E</span>' : ''}</h2>
                     <h4 class="song-artist">${sanitize(s.artist)}</h4>
                 </div>
                 <p class="song-description">${sanitize(s.description)}</p>
