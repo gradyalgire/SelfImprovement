@@ -106,5 +106,23 @@ container.innerHTML = `
 
         <p><strong>If you are in immediate danger or thinking about harming yourself, contact local emergency services right now.</strong></p>
 
+        <hr>
+
+        <section class="copyright">
+            <ul>
+                <li>
+                    Built with HTML, CSS, JavaScript, Spotify API, PostgreSQL.
+                </li>
+                <li>
+                    <a href="https://github.com/gradyalgire/SelfImprovement" target="_blank">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    © 2026 SelfGrowth.fm. Grady Algire. All Rights Reserved.
+                </li>
+            </ul>
+        </section>
+
     </section>
 `;

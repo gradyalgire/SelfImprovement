@@ -870,6 +870,27 @@ footer ul a:hover {
     line-height: 1.5;
 }
 
+footer hr {
+    border-color: var(--text-primary);
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.copyright ul {
+    display: flex;
+    align-items: center;
+}
+
+.copyright a {
+    font-size: 200%;
+}
+
 /* mobile */
 @media (max-width: 1020px) {
 
@@ -1136,5 +1157,14 @@ footer ul a:hover {
     footer ul {
         display: inline;
         line-height: 2;
+    }
+
+    .copyright {
+        flex-direction: column;
+    }
+
+    .copyright ul {
+        display: contents;
+        align-items: center;
     }
 }
