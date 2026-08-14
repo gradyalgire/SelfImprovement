@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfGrowth FM · Recommendations</title>
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="recommendations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="/home.html">SelfGrowth FM</a></h1>
+        <nav>
+            <a href="/home.html">Home</a>
+            <a href="/playlist/playlist.html">Playlist</a>
+            <a href="/media/media.html">Media</a>
+            <a href="/recommendations/recommendations.html" class="active">Recommendations</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="recommendations">
+
+            <div class="recommendations-info">
+
+                <div class="recommendations-hero">
+                    <h2 class="page-title">Recommendations</h2>
+                    <p>This page exists so you can suggest additions that may help others move forward.</p>
+                    <p>All recommendations are reviewed carefully. Songs are analyzed for emotional impact, lyrical themes, and whether they support growth rather than escapism. Media submissions are evaluated for long-term value, mindset alignment, and practical usefulness.</p>
+                    <p>Not every request will be added. This is intentional.</p>
+                </div>
+
+                <div class="recommendations-info-card">
+                    <h2>What makes a good recommendation?</h2>
+                    <ul class="recommendations-checklist">
+                        <li>Encourages growth, discipline, healing, or rebuilding</li>
+                        <li>Has long-term value, not just emotional escape</li>
+                        <li>Handles pain honestly without glorifying it</li>
+                        <li>Gives people something useful to carry forward</li>
+                    </ul>
+                </div>
+
+                <div class="recommendations-info-card">
+                    <h2>Submission examples:</h2>
+                    <div class="recommendations-example great">
+                        <h3>Great reason</h3>
+                        <p>“This gave me a clear way to think about rebuilding myself instead of
+                        staying stuck in regret. It helped me focus on discipline, self-respect,
+                        and becoming better through the pain rather than being controlled by it.”</p>
+                    </div>
+                    <div class="recommendations-example good">
+                        <h3>Good reason</h3>
+                        <p>“This helped me stop seeing failure as final and start treating it as part of rebuilding.”</p>
+                    </div>
+                    <div class="recommendations-example weak">
+                        <h3>Weak reason</h3>
+                        <p>“I like this song.”</p>
+                    </div>
+                </div>
+
+                <div class="recommendations-info-card">
+                    <h2>What may not be added?</h2>
+                    <ul>
+                        <li>Songs with no growth angle</li>
+                        <li>Content that supports self-destruction</li>
+                        <li>Media with no clear rebuilding value</li>
+                        <li>Submissions without a real explanation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommendations-form">
+                <h3>What are you recommending?</h3>
+                <div class="recommendation-options">
+                    <button type="button" class="recommendation-option" onclick="loadForm('song', 0)">Song</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('media', 1)">Media</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('trigger', 2)">Trigger</button>
+                    <button type="button" class="recommendation-option" onclick="loadForm('other', 3)">Other</button>
+                </div>
+                <!-- hidden form for netlify form detection -->
+                <form name="recommendation-form" method="POST" data-netlify="true" hidden>
+                    <input type="text" name="title">
+                    <input type="text" name="artist">
+                    <input type="text" name="triggers">
+                    <input type="checkbox" name="explicit">
+                    <input type="text" name="artist-author-creator">
+                    <input type="url" name="link">
+                    <select name="type"></select>
+                    <input type="text" name="target_title">
+                    <textarea name="suggestion"></textarea>
+                    <textarea name="reason"></textarea>
+                    <textarea name="context"></textarea>
+                    <input type="email" name="email">
+                </form>
+                <!-- actual form users will see -->
+                <form id="recommendation-form" name="recommendation-form" method="POST" class="recommendation-form" data-netlify="true"></form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script src="recommendations.js"></script>
+    <script src="/assets/footer.js"></script>
+</body>
+
+</html>
